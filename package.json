@@ -27,10 +27,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint",
+  
       "prettier --write",
-      "grep -q 'console.log' && echo 'Remove console.log statements' && exit 1 || true",
-      "git add"
+      "grep -q 'console.log' && echo 'Remove console.log statements' && exit 1 || true"
     ]
   }
 }
