@@ -13,7 +13,7 @@ const DesktopNav = () => {
           key={link.label}
           className={
             pathName === link.path
-              ? 'relative after:absolute after:-bottom-1 after:w-3/4 after:h-[2px] after:bg-yellow-500 after:left-1/2 after:transform after:-translate-x-1/2'
+              ? 'relative after:absolute after:-bottom-1 after:w-3/4 after:h-[2px] after:bg-[#D4AF37] after:left-1/2 after:transform after:-translate-x-1/2'
               : ''
           }
         >

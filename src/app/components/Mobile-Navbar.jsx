@@ -15,7 +15,7 @@ const MobileNav = () => {
             key={link.label}
             className={
               pathName === link.path
-                ? 'text-yellow-500 transition hover:bg-[rgba(236,235,235,0.2)] py-1'
+                ? 'text-[#D4AF37] transition hover:bg-[rgba(236,235,235,0.2)] py-1'
                 : 'transition hover:bg-[rgba(236,235,235,0.2)] py-3'
             }
           >
