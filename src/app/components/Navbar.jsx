@@ -43,8 +43,8 @@ const Navbar = () => {
             className="object-fit"
             alt="amc logo"
           />
-          <p className="hidden md:block relative top-1 font-semibold">
-            Aesthetic Medicine Center
+          <p className="hidden md:block text-2xl font-sans relative text-black top-1 font-bold">
+            Aesthetic Medicine Central
           </p>
         </Link>
 

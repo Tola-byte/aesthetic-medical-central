@@ -15,76 +15,56 @@ import aesthetic5 from '../assets/products/aesthetic5.png';
 import aesthetic6 from '../assets/products/aesthetic6.png';
 import aesthetic7 from '../assets/products/aesthetic7.png';
 import aesthetic8 from '../assets/products/aesthetic8.png';
+import { listofservices } from '../config/config';
 
 const HomeComponent = () => {
   return (
     <div className="bg-[#D4AF37] text-black py-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-8 md:px-20 pb-8">
         <div className="pr-6">
-          <h1 className="font-semibold text-3xl md:text-5xl  mb-2">
-            Radiant Skin, <br /> Timeless Beauty
+          <h1 className="font-semibold text-3xl md:text-7xl  mb-2">
+            Radiant Skin <br /> Timeless Beauty.
           </h1>
-          <p className="text-sm mb-8">
+          <p className="text-lg px-2 w-3/4 mb-8">
             Experience personalized skin care solutions, luxurious products, and
             expert consultations that unlock your skin's natural glow and
             empower you with timeless confidence and beauty.
           </p>
-          <button className="block w-fit px-4 py-1 mb-6 md:mb-0 rounded-md border border-black bg-[#D4AF37] transition-all duration-500 hover:bg-black hover:text-[#D4AF37]">
+          <button className="block ml-2 w-fit px-4 py-1 mb-6 md:mb-0 rounded-md border border-black bg-[#D4AF37] transition-all duration-500 hover:bg-black hover:text-[#D4AF37]">
             Book Appointment
           </button>
         </div>
         <Image
           src={image16}
           alt="image 16"
-          className="w-[100%] object-fit rounded-lg md:clipPath md:clip-it"
+          className='w-[95%] object-fit rounded-2xl hover:scale-105 transform transition duration-300 ease-in-out'
+         // className="w-[100%] object-fit rounded-lg md:clipPath md:clip-it"
         />
       </div>
       <section className="bg-white py-12 px-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-6">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            <Image
-              src={consult}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-6">
+         
+
+            {
+              listofservices.map((item) => (
+                 <div className="flex flex-col md:flex-row gap-4 items-center">
+                 <Image
+                    src={item.image}
+                    key={item.id}
               alt="image 21"
-              className="w-[7rem] h-[7rem] object-fit rounded-full"
+              className="w-[50%] h-[70%] object-fit rounded-xl"
             />
-            <div className="text-center md:text-left">
-              <h3 className="text-[#D4AF37] font-semibold text-xl">
-                Consultation
+            <div className="text-center md:text-left flex flex-col gap-4">
+              <h3 className="text-[#D4AF37] font-bold text-3xl">
+                {item.title}
               </h3>
-              <p className="text-sm">
-                Schedule a personalized consultation with our expert team to
-                discuss your aesthetic goals.
+              <p className="text-md w-[80%]">
+                {item.description}
               </p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            <Image
-              src={image32}
-              alt="facial"
-              className="w-[7rem] h-[7rem] object-fit rounded-full object-top-right"
-            />
-            <div className="text-center md:text-left">
-              <h3 className="text-[#D4AF37] font-semibold text-xl">Facial</h3>
-              <p className="text-sm">
-                Experience the ultimate glow — our tailored facials refresh and
-                rejuvenate your skin for timeless beauty
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            <Image
-              src={bodyTherapy}
-              alt="body therapy"
-              className="w-[7rem] h-[7rem] object-fit rounded-full"
-            />
-            <div className="text-center md:text-left">
-              <h3 className="text-[#D4AF37] font-semibold text-xl">Therapy</h3>
-              <p className="text-sm">
-                Reveal your best self with aesthetic therapy because beauty is
-                more than skin deep.
-              </p>
-            </div>
-          </div>
+              </div>
+              </div>
+              ))
+            }
         </div>
         <Link
           href="/services"

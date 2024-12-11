@@ -19,7 +19,7 @@ const MobileNav = () => {
                 : 'transition hover:bg-[rgba(236,235,235,0.2)] py-3'
             }
           >
-            <Link href={link.path} className="block w-full">
+            <Link href={link.path} className="block font-roboto w-full text-black">
               {link.label}
             </Link>
           </li>

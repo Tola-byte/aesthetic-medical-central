@@ -17,7 +17,7 @@ const DesktopNav = () => {
               : ''
           }
         >
-          <Link href={link.path}>{link.label}</Link>
+          <Link href={link.path} className='text-black'>{link.label}</Link>
         </li>
       ))}
     </ul>
