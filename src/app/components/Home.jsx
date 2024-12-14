@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import image16 from '../assets/Img 16.jpg';
-import image21 from '../assets/Img 21.jpg';
 import image32 from '../assets/Img 32.jpg';
 import consult from '../assets/consult.png';
 import bodyTherapy from '../assets/body therapy.jpg';
@@ -18,7 +17,7 @@ import aesthetic8 from '../assets/products/aesthetic8.png';
 
 const HomeComponent = () => {
   return (
-    <div className="bg-[#D4AF37] text-black py-4">
+    <div className="bg-[#D4AF37] text-black pt-4 pb-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-8 md:px-20 pb-8">
         <div className="pr-6">
           <h1 className="font-semibold text-3xl md:text-5xl  mb-2">
@@ -37,6 +36,7 @@ const HomeComponent = () => {
           src={image16}
           alt="image 16"
           className="w-[100%] object-fit rounded-lg md:clipPath md:clip-it"
+          priority="true"
         />
       </div>
       <section className="bg-white py-12 px-20">
@@ -110,14 +110,14 @@ const HomeComponent = () => {
         </Link>
       </section>
 
-      <section className="bg-[#D4AF37] px-8 md:px-20 py-20">
+      <section className="bg-[#D4AF37] px-8 md:px-20 pt-20 pb-12">
         {/* <h2 className="text-center font-semibold text-3xl mb-4">Products</h2> */}
         <p className="text-center font-semibold max-w-[90%] md:max-w-[70%] text-3xl mx-auto">
           Explore our curated selection of premium skincare products.
         </p>
         <div className="mt-6 bg-white rounded-md px-6 py-12 ">
           <div className="flex flex-wrap gap-x-4 gap-y-6 justify-between md:grid grid-cols-6 md:gap-6 md:gap-y-8">
-            <div className="rounded-md w-fit transition duration-100 hover:shadow-lg hover:scale-105 relative">
+            <div className="rounded-md w-fit transition duration-100 hover:shadow-xl hover:scale-105 relative">
               <div className="absolute -top-10 -left-1 pl-2 z-60 w-fit px-1 pb-1 h-20 bg-white text-[#D4AF37] font-semibold flex flex-col-reverse crown">
                 <p>AMC</p>
               </div>
@@ -129,7 +129,7 @@ const HomeComponent = () => {
               <p className="my-1 px-2 text-[16px] font-light">Product 1</p>
               <p className="font-semibold px-2 pb-4">&#8358;29,999</p>
             </div>
-            <div className="rounded-md w-fit transition duration-100 hover:shadow-lg hover:scale-105 relative">
+            <div className="rounded-md w-fit transition duration-100 hover:shadow-xl hover:scale-105 relative">
               <div className="absolute -top-10 -left-1 pl-2 z-60 w-fit px-1 pb-1 h-20 bg-white text-[#D4AF37] font-semibold flex flex-col-reverse crown">
                 <p>AMC</p>
               </div>
@@ -141,7 +141,7 @@ const HomeComponent = () => {
               <p className="my-1 px-2 text-[16px] font-light">Product 2</p>
               <p className="font-semibold px-2 pb-4">&#8358;14,999</p>
             </div>
-            <div className="rounded-md w-fit transition duration-100 hover:shadow-lg hover:scale-105 relative">
+            <div className="rounded-md w-fit transition duration-100 hover:shadow-xl hover:scale-105 relative">
               <div className="absolute -top-10 -left-1 pl-2 z-60 w-fit px-1 pb-1 h-20 bg-white text-[#D4AF37] font-semibold flex flex-col-reverse crown">
                 <p>AMC</p>
               </div>
@@ -153,7 +153,7 @@ const HomeComponent = () => {
               <p className="my-1 px-2 text-[16px] font-light">Product 3</p>
               <p className="font-semibold px-2 pb-4">&#8358;19,999</p>
             </div>
-            <div className="rounded-md w-fit transition duration-100 hover:shadow-lg hover:scale-105 relative">
+            <div className="rounded-md w-fit transition duration-100 hover:shadow-xl hover:scale-105 relative">
               <div className="absolute -top-10 -left-1 pl-2 z-60 w-fit px-1 pb-1 h-20 bg-white text-[#D4AF37] font-semibold flex flex-col-reverse crown">
                 <p>AMC</p>
               </div>
@@ -165,7 +165,7 @@ const HomeComponent = () => {
               <p className="my-1 px-2 text-[16px] font-light">Product 4</p>
               <p className="font-semibold px-2 pb-4">&#8358;24,999</p>
             </div>
-            <div className="rounded-md w-fit transition duration-100 hover:shadow-lg hover:scale-105 relative">
+            <div className="rounded-md w-fit transition duration-100 hover:shadow-xl hover:scale-105 relative">
               <div className="absolute -top-10 -left-1 pl-2 z-60 w-fit px-1 pb-1 h-20 bg-white text-[#D4AF37] font-semibold flex flex-col-reverse crown">
                 <p>AMC</p>
               </div>
@@ -177,7 +177,7 @@ const HomeComponent = () => {
               <p className="my-1 px-2 text-[16px] font-light">Product 5</p>
               <p className="font-semibold px-2 pb-6">&#8358;29,999</p>
             </div>
-            <div className="hidden md:block rounded-md w-fit transition duration-100 hover:shadow-lg hover:scale-105 relative">
+            <div className="hidden md:block rounded-md w-fit transition duration-100 hover:shadow-xl hover:scale-105 relative">
               <div className="absolute -top-10 -left-1 pl-2 z-60 w-fit px-1 pb-1 h-20 bg-white text-[#D4AF37] font-semibold flex flex-col-reverse crown">
                 <p>AMC</p>
               </div>
@@ -189,7 +189,7 @@ const HomeComponent = () => {
               <p className="my-1 px-2 text-[16px] font-light">Product 6</p>
               <p className="font-semibold px-2 pb-4">&#8358;21,999</p>
             </div>
-            <div className="hidden md:block rounded-md w-fit transition duration-100 hover:shadow-lg hover:scale-105 relative">
+            <div className="hidden md:block rounded-md w-fit transition duration-100 hover:shadow-xl hover:scale-105 relative">
               <div className="absolute -top-10 -left-1 pl-2 z-60 w-fit px-1 pb-1 h-20 bg-white text-[#D4AF37] font-semibold flex flex-col-reverse crown">
                 <p>AMC</p>
               </div>
@@ -201,7 +201,7 @@ const HomeComponent = () => {
               <p className="my-1 px-2 text-[16px] font-light">Product 7</p>
               <p className="font-semibold px-2 pb-4">&#8358;17,999</p>
             </div>
-            <div className="hidden md:block rounded-md w-fit transition duration-100 hover:shadow-lg hover:scale-105 relative">
+            <div className="hidden md:block rounded-md w-fit transition duration-100 hover:shadow-xl hover:scale-105 relative">
               <div className="absolute -top-10 -left-1 pl-2 z-60 w-fit px-1 pb-1 h-20 bg-white text-[#D4AF37] font-semibold flex flex-col-reverse crown">
                 <p>AMC</p>
               </div>
@@ -216,7 +216,7 @@ const HomeComponent = () => {
           </div>
           <Link
             href="/products"
-            className="block w-fit mx-auto mt-4 px-8 py-1 text-[#D4AF37] border-2 border-[#D4AF37] hover:shadow-lg bg-white rounded-md relative transition duration-100 hover:bottom-[0.8px]"
+            className="block w-fit mx-auto mt-4 px-12 py-1 text-[#D4AF37] border-2 border-[#D4AF37] hover:shadow-lg bg-white rounded-md relative transition duration-100 hover:bottom-[0.8px]"
           >
             Shop
           </Link>
