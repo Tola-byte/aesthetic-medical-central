@@ -2,7 +2,14 @@ import React from 'react';
 import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from './components/Navbar';
+import { Roboto } from 'next/font/google';
 import Footer from './components/Footer';
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+});
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -24,7 +31,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${roboto.className}`}
+        //  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar></Navbar>
         <div>{children}</div>
