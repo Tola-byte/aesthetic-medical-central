@@ -13,7 +13,7 @@ import TestimonialComponent from './testimonials/Testimonial';
 const HomeComponent = () => {
   return (
     <div className="bg-[#D4AF37] text-black pt-4 pb-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-8 md:px-20 pb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-4 md:px-20 pb-8">
         <div className="pr-6">
           <h1 className="font-semibold text-3xl md:text-7xl  mb-2">
             Radiant Skin <br /> Timeless Beauty.
@@ -33,7 +33,7 @@ const HomeComponent = () => {
           className="w-[95%] object-fit rounded-2xl hover:scale-105 transform transition duration-300 ease-in-out"
         />
       </div>
-      <section className="bg-white py-12 px-20">
+      <section className="bg-white py-12 px-4 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-6">
           {listofservices.map((item) => (
             <div
@@ -50,7 +50,7 @@ const HomeComponent = () => {
                 <h3 className="text-[#D4AF37] font-bold text-3xl">
                   {item.title}
                 </h3>
-                <p className="text-md w-[80%]">{item.description}</p>
+                <p className="text-md w-[80%] mx-auto">{item.description}</p>
               </div>
             </div>
           ))}
@@ -79,7 +79,7 @@ const HomeComponent = () => {
         </Link>
       </section>
 
-      <section className="bg-[#D4AF37] px-10 md:px-20 pt-24 pb-16 border-b-2 border-white">
+      <section className="bg-[#D4AF37] px-4 md:px-20 pt-24 pb-16 border-b-2 border-white">
         <p className="text-center font-semibold max-w-[90%] md:max-w-[70%] text-3xl mx-auto">
           Explore our curated selection of premium skincare products.
         </p>

@@ -22,7 +22,7 @@ export const links = [
   },
   {
     label: 'Blog',
-    path: '/blog',
+    path: 'https://aestheticmedicinecentral.wordpress.com/2024/03/11/the-glow-up-tips-for-younger-looking-skin/',
   },
 ];
 
