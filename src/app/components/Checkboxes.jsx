@@ -49,92 +49,48 @@ const Checkboxes = ({ products, setProducts }) => {
   }, categories);
 
   return (
-    <div className="flex flex-col gap-2">
-      {categories.length !== 0
-        ? categories.map((category, index) => (
-            <label
-              className="flex items-center cursor-pointer"
-              key={category.label}
-            >
-              <div className="relative">
-                <input
-                  type="checkbox"
-                  checked={category.checkedStatus}
-                  onChange={() => toggleCheckedStatus(category)}
-                  className="sr-only"
+    <div className="flex flex-col gap-2 pr-6">
+      {categories.map((category) => (
+        <label
+          className="flex items-center cursor-pointer"
+          key={category.label}
+        >
+          <div className="relative">
+            <input
+              type="checkbox"
+              checked={category.checkedStatus}
+              onChange={() => toggleCheckedStatus(category)}
+              className="sr-only"
+            />
+            <div
+              className={`w-6 h-6 rounded-md border-2 ${
+                category.checkedStatus
+                  ? 'bg-blue-500 border-blue-500'
+                  : 'bg-white border-gray-300'
+              } transition-colors duration-300`}
+            ></div>
+            {category.checkedStatus && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute top-0 left-0 w-6 h-6 text-white pointer-events-none"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
                 />
-                <div
-                  className={`w-6 h-6 rounded-md border-2 ${
-                    category.checkedStatus
-                      ? 'bg-blue-500 border-blue-500'
-                      : 'bg-white border-gray-300'
-                  } transition-colors duration-300`}
-                ></div>
-                {category.checkedStatus && (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute top-0 left-0 w-6 h-6 text-white pointer-events-none"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                )}
-              </div>
-              <span className="ml-2 text-gray-700">
-                {category.label.charAt(0).toUpperCase() +
-                  category.label.slice(1)}
-              </span>
-            </label>
-          ))
-        : categories.map((category, index) => (
-            <label
-              className="flex items-center cursor-pointer"
-              key={category.label}
-            >
-              <div className="relative">
-                <input
-                  type="checkbox"
-                  checked={category.checkedStatus}
-                  onChange={() => toggleCheckedStatus(category)}
-                  className="sr-only"
-                />
-                <div
-                  className={`w-6 h-6 rounded-md border-2 ${
-                    category.checkedStatus
-                      ? 'bg-blue-500 border-blue-500'
-                      : 'bg-white border-gray-300'
-                  } transition-colors duration-300`}
-                ></div>
-                {category.checkedStatus && (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute top-0 left-0 w-6 h-6 text-white pointer-events-none"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                )}
-              </div>
-              <span className="ml-2 text-gray-700">
-                {category.label.charAt(0).toUpperCase() +
-                  category.label.slice(1)}
-              </span>
-            </label>
-          ))}
+              </svg>
+            )}
+          </div>
+          <span className="ml-2 text-gray-700">
+            {category.label.charAt(0).toUpperCase() + category.label.slice(1)}
+          </span>
+        </label>
+      ))}
     </div>
   );
 };
