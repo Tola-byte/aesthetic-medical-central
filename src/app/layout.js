@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import { Roboto } from 'next/font/google';
 import Footer from './components/Footer';
+import ReduxProvider from './features/Provider';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -34,9 +35,12 @@ export default function RootLayout({ children }) {
         className={`${roboto.className}`}
         //  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar></Navbar>
-        <div>{children}</div>
-        <Footer />
+        {' '}
+        <ReduxProvider>
+          <Navbar />
+          <div>{children}</div>
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -117,7 +117,7 @@ const DesktopProducts = () => {
         {Array.from({ length: totalSlides }).map((_, idx) => (
           <div
             key={idx}
-            className={`h-2 w-2 transition-transform duration-100  bg-yellow-500 mx-1 rounded-full cursor-pointer ${
+            className={`h-2 w-2 transition-transform duration-100  bg-[#D4AF37] mx-1 rounded-full cursor-pointer ${
               currentIndex === idx ? 'scale-[250%]' : ''
             }`}
             onClick={() => setCurrentIndex(idx)}
