@@ -78,7 +78,7 @@ const TestimonialComponent = () => {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-6 -translate-y-1/2 text-yellow-500 rounded-full"
+        className="absolute top-1/2 left-6 -translate-y-1/2 text-[#D4AF37] rounded-full"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ const TestimonialComponent = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-6 -translate-y-1/2 text-yellow-500  rounded-full"
+        className="absolute top-1/2 right-6 -translate-y-1/2 text-[#D4AF37]  rounded-full"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

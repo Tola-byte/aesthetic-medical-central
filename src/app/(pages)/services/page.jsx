@@ -185,7 +185,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
@@ -272,7 +272,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
@@ -361,7 +361,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
@@ -423,7 +423,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
@@ -507,7 +507,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
@@ -593,7 +593,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
@@ -682,7 +682,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
@@ -749,7 +749,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
@@ -820,7 +820,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
@@ -877,7 +877,7 @@ const page = () => {
                 'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
               }
               className={
-                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-yellow-500 mt-8'
+                'block w-fit mx-auto md:mx-0 px-4 py-1 rounded-md border border-[#D4AF37] mt-8'
               }
             >
               Book Appointment
