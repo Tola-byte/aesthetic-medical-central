@@ -1,34 +1,43 @@
 import React from 'react';
 import { AccordionItem } from './Accordion';
+import Image from 'next/image';
+import Arrow from "@/app/assets/arrow.png"
 
-const Items = () => {
+
+const Items = ({ data }  ) => {
   return (
     <div>
-      <AccordionItem value="1" trigger="What services do you offer?">
-        We offer a range of aesthetic services including skin care
-        consultations, anti-aging treatments, facials, chemical peels, and
-        personalized product recommendations.
-      </AccordionItem>
-      <AccordionItem
-        value="2"
-        trigger="How do I know which treatment is right for me?"
-      >
-        During your consultation, we assess your skin type, concerns, and goals
-        to recommend the most effective treatments tailored to your needs.
-      </AccordionItem>
-      <AccordionItem
-        value="3"
-        trigger="Are your treatments safe for sensitive skin?"
-      >
-        Yes, we offer treatments specifically designed for sensitive skin. Our
-        experts will guide you to the safest options for your skin type.
-      </AccordionItem>
-      <AccordionItem value="4" trigger="Do you offer virtual consultations?">
-        Yes, we offer virtual consultations for your convenience. Contact us to
-        schedule an appointment.
-      </AccordionItem>
+      {data?.map((item) => (
+        <AccordionItem key={item.id} value={item.id} trigger={item.title}>
+        
+          {item?.body?.length > 0 && Array.isArray(item.body) ? (
+            <div>
+
+              {item?.body?.map((bodyItem) => (
+                <ul key={bodyItem}>
+                  <div className='flex gap-4 '>
+                    {/* <Image
+                      src={Arrow}
+                      alt='arrow'
+                      className='mt-2'
+                      width={8}
+                      height={8}
+                    /> */}
+                    <li className='' key={bodyItem}>{bodyItem}</li>
+                    </div>
+                  </ul>
+              ))}
+            </div>
+          ) : (
+            <p>{item?.body || "No content available"}</p>
+          )}
+        </AccordionItem>
+          
+      ))}
     </div>
   );
 };
 
 export default Items;
+
+

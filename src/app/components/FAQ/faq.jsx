@@ -1,6 +1,7 @@
 import React from 'react';
 import Accordion from './Accordion';
 import Items from './Item';
+import { FAQHomePageData } from '@/app/config/config';
 
 const FAQ = () => {
   return (
@@ -11,7 +12,7 @@ const FAQ = () => {
 
       <div className="w-[90%] mx-auto bg-white rounded-md">
         <Accordion>
-          <Items />
+          <Items data={FAQHomePageData}/>
         </Accordion>
       </div>
     </>

@@ -79,7 +79,7 @@ const HomeComponent = () => {
         </Link>
       </section>
 
-      <section className="bg-[#D4AF37] px-4 md:px-20 pt-24 pb-16 border-b-2 border-white">
+      <section className="bg-[#fff] px-4 md:px-20 pt-24 pb-16 border-b-2 border-white">
         <p className="text-center font-semibold max-w-[90%] md:max-w-[70%] text-3xl mx-auto">
           Explore our curated selection of premium skincare products.
         </p>

@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'services': "url('./assets/services/serviceshero.jpg')",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
