@@ -50,7 +50,7 @@ const page = () => {
             <div>
               <h2 className="font-semibold">{product.name}</h2>
               <p className="text-white bg-[#D4AF37] text-[10px] w-fit px-2 py-1 rounded-md mt-1 mb-8">
-                #{product.price}
+                &#8358; {new Intl.NumberFormat('en-US').format(product.price)}
               </p>
             </div>
             <div className="w-full flex justify-between">
@@ -65,7 +65,7 @@ const page = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="white"
-                    className="size-6"
+                    className="size-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -85,7 +85,7 @@ const page = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="size-6"
+                    className="size-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -101,16 +101,21 @@ const page = () => {
                 </p>
               </button>
               <p className="px-2 py-1 bg-[#D4AF37] rounded-md text-white">
-                {calculateProductPrice(product)}
+                &#8358;{' '}
+                {new Intl.NumberFormat('en-US').format(
+                  calculateProductPrice(product),
+                )}
               </p>
             </div>
           </div>
         </div>
       ))}
 
-      <div className="w-full flex justify-end gap-[2px] mt-4">
+      <div className="w-full flex justify-end items-center gap-[6px] mt-4">
         <p>Total: </p>
-        <p className="text-center">{totalPrice}</p>
+        <p className="text-white bg-[#D4AF37] w-fit px-2 py-1 rounded-md">
+          &#8358; {new Intl.NumberFormat('en-US').format(totalPrice)}
+        </p>
       </div>
     </div>
   );
