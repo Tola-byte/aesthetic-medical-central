@@ -193,7 +193,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="bg-[rgba(0,0,0,0.9)] text-sm text-white text-center py-1">
-        &copy;{new Date().getFullYear()}. Aesthetic Medical Center. All Rights
+        &copy;{new Date().getFullYear()}. Aesthetic Medical Central. All Rights
         Reserved
       </p>
     </>
