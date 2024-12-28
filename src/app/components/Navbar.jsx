@@ -14,6 +14,10 @@ export const links = [
     path: '/',
   },
   {
+    label: 'About',
+    path: '/about',
+  },
+  {
     label: 'Services',
     path: '/services',
   },
