@@ -9,28 +9,24 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action) => {
-      // Add a new product to the store
-      const addedProduct = action.payload;
-      addedProduct.count = 1;
-      state.products.push(addedProduct);
+      state.products.push(action.payload);
     },
     removeProduct: (state, action) => {
-      // Remove a product by ID
       state.products = state.products.filter(
         (product) => product.name !== action.payload.name,
       );
     },
     increaseCount: (state, action) => {
-      const product = action.payload;
-      const cartItem = state.products.find((p) => p.name === product.name);
+      const cartItem = state.products.find(
+        (p) => p.name === action.payload.name,
+      );
       if (cartItem) {
         cartItem.count += 1;
       }
     },
     decreaseCount: (state, action) => {
-      const product = action.payload;
       const cartItem = state.products.find(
-        (item) => item.name === product.name,
+        (item) => item.name === action.payload.name,
       );
       if (cartItem && cartItem.count > 1) {
         cartItem.count -= 1;

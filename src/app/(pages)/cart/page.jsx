@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import { PaystackButton } from 'react-paystack';
+import EmptyCart from '@/app/components/EmptyCart';
 
 import {
   increaseCount,
@@ -49,88 +50,107 @@ const page = () => {
   };
   return (
     <div className="pt-24 pb-8 max-w-[80%] mx-auto">
-      <div>Cart Items</div>
-      {products?.map((product) => (
-        <div
-          className="border pr-4 rounded-md mb-4 flex gap-8"
-          key={product.name}
-        >
-          <Image
-            src={product.image}
-            alt={`${product.name} image`}
-            className="rounded-lg object-cover"
-            width={200}
-            height={200}
-          />
-          <div className="flex-1 py-4 flex flex-col justify-between">
-            <div>
-              <h2 className="font-semibold">{product.name}</h2>
-              <p className="text-white bg-[#D4AF37] text-[10px] w-fit px-2 py-1 rounded-md mt-1 mb-8">
-                #{product.price}
-              </p>
-            </div>
-            <div className="w-full flex justify-between">
-              <div className="flex items-center gap-2">
-                <p
-                  className="bg-[#D4AF37] w-4 h-4 flex items-center justify-center rounded-full"
-                  onClick={() => increaseProductCount(product)}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="white"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="white"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4.5v15m7.5-7.5h-15"
-                    />
-                  </svg>
-                </p>
-                <p className="px-4 font-semibold">{product.count}</p>
-                <p
-                  className="bg-red-500 text-white w-4 h-4 flex items-center justify-center rounded-full"
-                  onClick={() => decreaseProductCount(product)}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 12h14"
-                    />
-                  </svg>
-                </p>
+      {products.length === 0 ? (
+        <EmptyCart />
+      ) : (
+        <div>
+          <p className="mb-2 font-semibold text-lg pl-4">Cart Items</p>
+          {products?.map((product) => (
+            <div
+              className=" p-2 border rounded-md mb-4 flex gap-8"
+              key={product.name}
+            >
+              <Image
+                src={product.image}
+                alt={`${product.name} image`}
+                className="w-40 h-40 rounded-lg object-cover"
+                width={200}
+                height={200}
+              />
+              <div className="flex-1 py-4 flex flex-col justify-between">
+                <div>
+                  <h2 className="font-semibold">{product.name}</h2>
+                  <p className="text-white bg-[#D4AF37] text-[10px] w-fit px-2 py-1 rounded-md mt-1 mb-8">
+                    &#8358;{' '}
+                    {new Intl.NumberFormat('en-US').format(product.price)}
+                  </p>
+                </div>
+                <div className="w-full flex justify-between">
+                  <div className="flex items-center gap-2">
+                    <p
+                      className="bg-[#D4AF37] w-6 h-6 flex items-center justify-center rounded-full"
+                      onClick={() => increaseProductCount(product)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="white"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="white"
+                        className="size-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 4.5v15m7.5-7.5h-15"
+                        />
+                      </svg>
+                    </p>
+                    <p className="px-4 font-semibold">{product.count}</p>
+                    <p
+                      className="bg-red-500 text-white w-6 h-6 flex items-center justify-center rounded-full"
+                      onClick={() => decreaseProductCount(product)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="size-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 12h14"
+                        />
+                      </svg>
+                    </p>
+                  </div>
+                  <button className="block w-fit px-4 mx-auto text-center text-sm border border-[#D4AF37] text-[#D4AF37] hover:bg-yellow-50  py-1 rounded-sm">
+                    <p onClick={() => dispatch(removeProduct(product))}>
+                      Remove from Cart
+                    </p>
+                  </button>
+                  <p className="px-2 py-1 bg-[#D4AF37] rounded-md text-white">
+                    &#8358;{' '}
+                    {new Intl.NumberFormat('en-US').format(
+                      calculateProductPrice(product),
+                    )}
+                  </p>
+                </div>
               </div>
-              <button className="block w-fit px-4 mx-auto text-center text-sm border border-[#D4AF37] text-[#D4AF37] hover:bg-yellow-50  py-1 rounded-sm">
-                <p onClick={() => dispatch(removeProduct(product))}>
-                  Remove from Cart
-                </p>
-              </button>
-              <p className="px-2 py-1 bg-[#D4AF37] rounded-md text-white">
-                {calculateProductPrice(product)}
-              </p>
             </div>
+          ))}
+          
+        
           </div>
-        </div>
-      ))}
+      )}
+
+    
+        {/* </div>
+      ))} */}
+    
 
   
-      <div className="w-1/5 ml-auto flex justify-between px-4 mt-4 border rounded-md mb-4 gap-8">
+      <div className="w-1/4 ml-auto flex justify-between px-4 mt-4 border rounded-md mb-4 ">
         <div>
-          <p className='text-bold text-2xl font-mono'>Total: </p>
+          <p className='text-bold text-xl font-mono'>Total: </p>
         </div>
      <div>
-          <p className="text-bold text-2xl font-mono">{totalPrice}</p>
+          <p className="text-bold text-xl font-mono">
+            &#8358; {new Intl.NumberFormat('en-US').format(totalPrice)}
+          </p>
           </div>
       </div>
 
@@ -168,7 +188,7 @@ const page = () => {
                 Submit
               </button> */}
 
-              <PaystackButton {...componentProps} />
+              <PaystackButton disabled={!email} {...componentProps} />
             </div>
           </div>
         </div>
