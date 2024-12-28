@@ -1,7 +1,8 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
+import { PaystackButton } from 'react-paystack';
 import EmptyCart from '@/app/components/EmptyCart';
 
 import {
@@ -11,6 +12,8 @@ import {
 } from '@/app/features/productSlice';
 
 const page = () => {
+  const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState('');
   const products = useSelector((store) => store.productSlice.products);
   const calculateProductPrice = (product) => {
     return product.price * product.count;
@@ -34,6 +37,17 @@ const page = () => {
     }
   };
 
+  const componentProps = {
+    email: email,
+    amount: totalPrice * 100, // Convert to kobo
+    publicKey: 'pk_test_d4092ce3db5a82a4b470336b1bff4f34cbb49ae2',
+    text: 'Pay Now',
+    onSuccess: (response) => {
+      alert(`Payment successful! Reference: ${response.reference}`);
+      // Optionally call your backend to verify the payment
+    },
+    onClose: () => alert('Transaction was not completed, window closed.'),
+  };
   return (
     <div className="pt-24 pb-8 max-w-[80%] mx-auto">
       {products.length === 0 ? (
@@ -43,13 +57,15 @@ const page = () => {
           <p className="mb-2 font-semibold text-lg pl-4">Cart Items</p>
           {products?.map((product) => (
             <div
-              className=" p-2 px-6 border rounded-md mb-4 flex flex-col md:flex-row gap-8"
+              className=" p-2 border rounded-md mb-4 flex gap-8"
               key={product.name}
             >
               <Image
                 src={product.image}
                 alt={`${product.name} image`}
-                className="w-60 h-60 object-cover"
+                className="w-40 h-40 rounded-lg object-cover"
+                width={200}
+                height={200}
               />
               <div className="flex-1 py-4 flex flex-col justify-between">
                 <div className="flex items-start justify-between">
@@ -123,12 +139,63 @@ const page = () => {
               </div>
             </div>
           ))}
+        </div>
+      )}
 
-          <div className="w-full flex justify-end items-center gap-[6px] mt-4">
-            <p>Total: </p>
-            <p className="text-white bg-[#D4AF37] w-fit px-2 py-1 rounded-md">
-              &#8358; {new Intl.NumberFormat('en-US').format(totalPrice)}
-            </p>
+      {/* </div>
+      ))} */}
+
+      <div className="w-1/4 ml-auto flex justify-between px-4 mt-4 border rounded-md mb-4 ">
+        <div>
+          <p className="text-bold text-xl font-mono">Total: </p>
+        </div>
+        <div>
+          <p className="text-bold text-xl font-mono">
+            &#8358; {new Intl.NumberFormat('en-US').format(totalPrice)}
+          </p>
+        </div>
+      </div>
+
+      <button className="m-auto" onClick={() => setOpen(true)}>
+        Proceed to payment
+      </button>
+
+      {open && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-lg w-full max-w-sm mx-4">
+            <div className="px-6 py-4">
+              <h2 className="text-xl font-semibold text-gray-700">
+                Enter Your Email
+              </h2>
+              <p className="text-gray-500 text-sm mt-1">
+                We need your email to proceed with the payment.
+              </p>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="w-full mt-4 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div className="flex justify-end px-6 py-3 border-t border-gray-200">
+              <button
+                onClick={() => setOpen(false)}
+                className="bg-gray-300 text-gray-700 px-4 py-2 rounded-md mr-2 hover:bg-gray-400"
+              >
+                Cancel
+              </button>
+              {/* <button
+                onClick={() => {}}
+                disabled={!email} // Disable if email is empty
+                className={`px-4 py-2 rounded-md text-white ${email ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-300 cursor-not-allowed"
+                  }`}
+              >
+                Submit
+              </button> */}
+
+              <PaystackButton disabled={!email} {...componentProps} />
+            </div>
           </div>
         </div>
       )}

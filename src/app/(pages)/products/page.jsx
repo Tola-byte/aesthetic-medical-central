@@ -22,7 +22,6 @@ const page = () => {
   };
 
   const removeFromCart = (product) => {
-    product.count = 0;
     dispatch(removeProduct(product));
   };
 
