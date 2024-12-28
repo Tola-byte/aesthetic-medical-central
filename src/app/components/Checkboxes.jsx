@@ -49,7 +49,7 @@ const Checkboxes = ({ products, setProducts }) => {
   }, categories);
 
   return (
-    <div className="flex flex-col gap-2 pr-6">
+    <div className="grid grid-cols-2 md:flex flex-col gap-2 pr-6">
       {categories.map((category) => (
         <label
           className="flex items-center cursor-pointer"
@@ -86,7 +86,7 @@ const Checkboxes = ({ products, setProducts }) => {
               </svg>
             )}
           </div>
-          <span className="ml-2 text-gray-700">
+          <span className="ml-2 text-gray-700 text-sm">
             {category.label.charAt(0).toUpperCase() + category.label.slice(1)}
           </span>
         </label>

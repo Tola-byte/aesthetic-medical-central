@@ -43,7 +43,7 @@ const page = () => {
           <p className="mb-2 font-semibold text-lg pl-4">Cart Items</p>
           {products?.map((product) => (
             <div
-              className=" p-2 px-6 border rounded-md mb-4 flex gap-8"
+              className=" p-2 px-6 border rounded-md mb-4 flex flex-col md:flex-row gap-8"
               key={product.name}
             >
               <Image
@@ -52,12 +52,19 @@ const page = () => {
                 className="w-60 h-60 object-cover"
               />
               <div className="flex-1 py-4 flex flex-col justify-between">
-                <div>
-                  <h2 className="font-semibold">{product.name}</h2>
-                  <p className="text-white bg-[#D4AF37] text-[10px] w-fit px-2 py-1 rounded-md mt-1 mb-8">
-                    &#8358;{' '}
-                    {new Intl.NumberFormat('en-US').format(product.price)}
-                  </p>
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h2 className="font-semibold">{product.name}</h2>
+                    <p className="text-white bg-[#D4AF37] text-[10px] w-fit px-2 py-1 rounded-md mt-1 mb-8">
+                      &#8358;{' '}
+                      {new Intl.NumberFormat('en-US').format(product.price)}
+                    </p>
+                  </div>
+                  <button className="block md:hidden w-fit px-4 mx-auto text-center text-sm border border-[#D4AF37] text-[#D4AF37] hover:bg-yellow-50  py-1 rounded-sm">
+                    <p onClick={() => dispatch(removeProduct(product))}>
+                      Remove
+                    </p>
+                  </button>
                 </div>
                 <div className="w-full flex justify-between">
                   <div className="flex items-center gap-2">
@@ -101,9 +108,9 @@ const page = () => {
                       </svg>
                     </p>
                   </div>
-                  <button className="block w-fit px-4 mx-auto text-center text-sm border border-[#D4AF37] text-[#D4AF37] hover:bg-yellow-50  py-1 rounded-sm">
+                  <button className="hidden md:block w-fit px-4 mx-auto text-center text-sm border border-[#D4AF37] text-[#D4AF37] hover:bg-yellow-50  py-1 rounded-sm">
                     <p onClick={() => dispatch(removeProduct(product))}>
-                      Remove from Cart
+                      Remove
                     </p>
                   </button>
                   <p className="px-2 py-1 bg-[#D4AF37] rounded-md text-white">
