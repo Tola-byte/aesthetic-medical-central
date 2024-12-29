@@ -12,8 +12,8 @@ import {
 } from '@/app/features/productSlice';
 
 const page = () => {
-  const [open, setOpen] = useState(false)
-  const [email, setEmail] = useState('')
+  const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState('');
   const products = useSelector((store) => store.productSlice.products);
   const calculateProductPrice = (product) => {
     return product.price * product.count;
@@ -40,13 +40,13 @@ const page = () => {
   const componentProps = {
     email: email,
     amount: totalPrice * 100, // Convert to kobo
-    publicKey: "pk_test_d4092ce3db5a82a4b470336b1bff4f34cbb49ae2",
-    text: "Pay Now",
+    publicKey: 'pk_test_d4092ce3db5a82a4b470336b1bff4f34cbb49ae2',
+    text: 'Pay Now',
     onSuccess: (response) => {
       alert(`Payment successful! Reference: ${response.reference}`);
       // Optionally call your backend to verify the payment
     },
-    onClose: () => alert("Transaction was not completed, window closed."),
+    onClose: () => alert('Transaction was not completed, window closed.'),
   };
   return (
     <div className="pt-24 pb-8 max-w-[80%] mx-auto">
@@ -57,7 +57,7 @@ const page = () => {
           <p className="mb-2 font-semibold text-lg pl-4">Cart Items</p>
           {products?.map((product) => (
             <div
-              className=" p-2 border rounded-md mb-4 flex gap-8"
+              className=" p-2 border rounded-md mb-4 flex flex-col md:flex-row gap-8"
               key={product.name}
             >
               <Image
@@ -67,13 +67,20 @@ const page = () => {
                 width={200}
                 height={200}
               />
-              <div className="flex-1 py-4 flex flex-col justify-between">
-                <div>
-                  <h2 className="font-semibold">{product.name}</h2>
-                  <p className="text-white bg-[#D4AF37] text-[10px] w-fit px-2 py-1 rounded-md mt-1 mb-8">
-                    &#8358;{' '}
-                    {new Intl.NumberFormat('en-US').format(product.price)}
-                  </p>
+              <div className="flex-1 px-4 md:px-0 py-4 flex flex-col justify-between">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h2 className="font-semibold">{product.name}</h2>
+                    <p className="text-white bg-[#D4AF37] text-[10px] w-fit px-2 py-1 rounded-md mt-1 mb-8">
+                      &#8358;{' '}
+                      {new Intl.NumberFormat('en-US').format(product.price)}
+                    </p>
+                  </div>
+                  <button className="block md:hidden w-fit px-4 mx-auto text-center text-sm border border-[#D4AF37] text-[#D4AF37] hover:bg-yellow-50  py-1 rounded-sm">
+                    <p onClick={() => dispatch(removeProduct(product))}>
+                      Remove
+                    </p>
+                  </button>
                 </div>
                 <div className="w-full flex justify-between">
                   <div className="flex items-center gap-2">
@@ -117,9 +124,9 @@ const page = () => {
                       </svg>
                     </p>
                   </div>
-                  <button className="block w-fit px-4 mx-auto text-center text-sm border border-[#D4AF37] text-[#D4AF37] hover:bg-yellow-50  py-1 rounded-sm">
+                  <button className="hidden md:block w-fit px-4 mx-auto text-center text-sm border border-[#D4AF37] text-[#D4AF37] hover:bg-yellow-50  py-1 rounded-sm">
                     <p onClick={() => dispatch(removeProduct(product))}>
-                      Remove from Cart
+                      Remove
                     </p>
                   </button>
                   <p className="px-2 py-1 bg-[#D4AF37] rounded-md text-white">
@@ -132,38 +139,41 @@ const page = () => {
               </div>
             </div>
           ))}
-          
-        
-          </div>
+        </div>
       )}
 
-    
-        {/* </div>
+      {/* </div>
       ))} */}
-    
 
-  
-      <div className="w-1/4 ml-auto flex justify-between px-4 mt-4 border rounded-md mb-4 ">
-        <div>
-          <p className='text-bold text-xl font-mono'>Total: </p>
-        </div>
-     <div>
-          <p className="text-bold text-xl font-mono">
-            &#8358; {new Intl.NumberFormat('en-US').format(totalPrice)}
-          </p>
+      {products.length > 0 && (
+        <div className="md:w-1/4 ml-auto flex justify-between px-4 mt-4 border rounded-md mb-4 ">
+          <div>
+            <p className="text-bold text-xl font-mono">Total: </p>
           </div>
-      </div>
+          <div>
+            <p className="text-bold text-xl font-mono">
+              &#8358; {new Intl.NumberFormat('en-US').format(totalPrice)}
+            </p>
+          </div>
+        </div>
+      )}
 
-      <button className='m-auto' onClick={() => setOpen(true)}>
-        Proceed to payment
-      </button>
+      {products.length > 0 && (
+        <button className="m-auto" onClick={() => setOpen(true)}>
+          Proceed to payment
+        </button>
+      )}
 
-      {
-        open && <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      {open && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg shadow-lg w-full max-w-sm mx-4">
             <div className="px-6 py-4">
-              <h2 className="text-xl font-semibold text-gray-700">Enter Your Email</h2>
-              <p className="text-gray-500 text-sm mt-1">We need your email to proceed with the payment.</p>
+              <h2 className="text-xl font-semibold text-gray-700">
+                Enter Your Email
+              </h2>
+              <p className="text-gray-500 text-sm mt-1">
+                We need your email to proceed with the payment.
+              </p>
               <input
                 type="email"
                 value={email}
@@ -192,7 +202,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      }
+      )}
     </div>
   );
 };

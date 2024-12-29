@@ -35,7 +35,7 @@ const Sort = ({ setProducts, products }) => {
   };
 
   return (
-    <div className="">
+    <div className="w-full md:w-fit">
       <label
         htmlFor="styledSelect"
         className="block text-sm font-medium text-gray-700 mb-2"
