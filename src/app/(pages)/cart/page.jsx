@@ -57,7 +57,7 @@ const page = () => {
           <p className="mb-2 font-semibold text-lg pl-4">Cart Items</p>
           {products?.map((product) => (
             <div
-              className=" p-2 border rounded-md mb-4 flex gap-8"
+              className=" p-2 border rounded-md mb-4 flex flex-col md:flex-row gap-8"
               key={product.name}
             >
               <Image
@@ -67,7 +67,7 @@ const page = () => {
                 width={200}
                 height={200}
               />
-              <div className="flex-1 py-4 flex flex-col justify-between">
+              <div className="flex-1 px-4 md:px-0 py-4 flex flex-col justify-between">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <h2 className="font-semibold">{product.name}</h2>
@@ -145,20 +145,24 @@ const page = () => {
       {/* </div>
       ))} */}
 
-      <div className="w-1/4 ml-auto flex justify-between px-4 mt-4 border rounded-md mb-4 ">
-        <div>
-          <p className="text-bold text-xl font-mono">Total: </p>
+      {products.length > 0 && (
+        <div className="md:w-1/4 ml-auto flex justify-between px-4 mt-4 border rounded-md mb-4 ">
+          <div>
+            <p className="text-bold text-xl font-mono">Total: </p>
+          </div>
+          <div>
+            <p className="text-bold text-xl font-mono">
+              &#8358; {new Intl.NumberFormat('en-US').format(totalPrice)}
+            </p>
+          </div>
         </div>
-        <div>
-          <p className="text-bold text-xl font-mono">
-            &#8358; {new Intl.NumberFormat('en-US').format(totalPrice)}
-          </p>
-        </div>
-      </div>
+      )}
 
-      <button className="m-auto" onClick={() => setOpen(true)}>
-        Proceed to payment
-      </button>
+      {products.length > 0 && (
+        <button className="m-auto" onClick={() => setOpen(true)}>
+          Proceed to payment
+        </button>
+      )}
 
       {open && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">

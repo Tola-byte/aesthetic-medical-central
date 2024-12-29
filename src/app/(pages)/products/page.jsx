@@ -12,12 +12,11 @@ import banner2 from '../../assets/products/banner2.jpg';
 
 const page = () => {
   const [products, setProducts] = useState([...allProducts]);
-  const [runEffect, setRunEffect] = useState(false);
+  // const [runEffect, setRunEffect] = useState(false);
   const dispatch = useDispatch();
   const addedProducts = useSelector((store) => store.productSlice.products);
 
   const addToCart = (product) => {
-    product.count = 1;
     dispatch(addProduct(product));
   };
 
@@ -39,6 +38,7 @@ const page = () => {
 
         <Image
           src={banner2}
+          priority="true"
           className="w-52 h-52 rounded-full object-cover object-left"
           alt="banner image"
         />
@@ -58,8 +58,6 @@ const page = () => {
 
         <div className="flex-1 px-6 md:px-0 md:pl-12 ">
           <div className="w-full flex flex-col md:flex-row gap-3 justify-between items-center mt-8 md:mt-0 mb-8">
-            {/* <h1 className="text-xl font-semibold">Explore our products</h1> */}
-
             <Search products={products} setProducts={setProducts} />
             <Sort setProducts={setProducts} products={products} />
           </div>

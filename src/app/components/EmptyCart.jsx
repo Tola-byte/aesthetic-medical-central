@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const EmptyCart = () => {
   return (
-    <div className="h-screen w-full flex flex-col gap-4 justify-center items-center text-center">
+    <div className="h-[80vh] w-full flex flex-col gap-4 justify-center items-center text-center">
       <h1 className="font-semibold text-xl "> Cart is Empty</h1>
       <p>
         Go to{' '}

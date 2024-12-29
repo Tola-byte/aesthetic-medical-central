@@ -13,10 +13,7 @@ export const links = [
     label: 'Home',
     path: '/',
   },
-  {
-    label: 'About',
-    path: '/about',
-  },
+
   {
     label: 'Services',
     path: '/services',
@@ -24,6 +21,10 @@ export const links = [
   {
     label: 'Products',
     path: '/products',
+  },
+  {
+    label: 'About',
+    path: '/about',
   },
   {
     label: 'Blog',
@@ -139,8 +140,8 @@ const Navbar = () => {
       <div
         className={
           firstNavState && isNavOpen
-            ? 'bg-white z-10 fixed left-0 top-12 pt-4 w-full md:hidden transition duration-1000 transform translate-y-[0%]'
-            : 'bg-white z-10 fixed left-0 top-12 pt-4 w-full md:hidden transition duration-1000 transform translate-y-[-100%]'
+            ? 'bg-white z-20 fixed left-0 top-12 pt-4 w-full md:hidden transition duration-1000 transform translate-y-[0%]'
+            : 'bg-white z-20 fixed left-0 top-12 pt-4 w-full md:hidden transition duration-1000 transform translate-y-[-100%]'
         }
         onClick={() => setIsNavOpen(false)}
       >
