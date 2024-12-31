@@ -24,7 +24,7 @@ const MobileNav = () => {
                 <Link
                   href={link.path}
                   target="_blank"
-                  className=" font-roboto w-full flex justify-center gap-[2px] items-center"
+                  className="w-full flex justify-center gap-[2px] items-center"
                 >
                   <span>{link.label}</span>
                   <svg
