@@ -12,8 +12,8 @@ import TestimonialComponent from './testimonials/Testimonial';
 
 const HomeComponent = () => {
   return (
-    <div className="bg-[#D4AF37] text-black pt-4 pb-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-4 md:px-20 pb-8">
+    <div className=" text-black pt-4 pb-16">
+      <div className="bg-[#D4AF37] grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-4 md:px-20 pb-8">
         <div className="pr-6">
           <h1 className="font-semibold text-3xl md:text-7xl  mb-2">
             Radiant Skin <br /> Timeless Beauty.
@@ -23,9 +23,15 @@ const HomeComponent = () => {
             expert consultations that unlock your skin's natural glow and
             empower you with timeless confidence and beauty.
           </p>
-          <button className="block ml-2 w-fit px-4 py-1 mb-6 md:mb-0 rounded-md border border-black bg-[#D4AF37] transition-all duration-500 hover:bg-black hover:text-[#D4AF37]">
-            Book Appointment
-          </button>
+          <Link
+            href={
+              'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
+            }
+          >
+            <button className="block ml-2 w-fit px-4 py-1 mb-6 md:mb-0 rounded-md border border-black bg-[#D4AF37] transition-all duration-500 hover:bg-black hover:text-[#D4AF37]">
+              Book Appointment
+            </button>
+          </Link>
         </div>
         <Image
           src={image16}
@@ -99,20 +105,22 @@ const HomeComponent = () => {
         </div>
       </section>
 
-      <section className="py-20 px-10 border-b-2 border-white">
+      <section className="bg-white pt-20 pb-12 px-10 border-b-2 border-gray-100">
         <h2 className="text-center font-semibold max-w-[90%] md:max-w-[70%] text-3xl mx-auto mb-4">
           What our clients say
         </h2>
         <TestimonialComponent />
         <Link
-          href="/"
+          href={
+            'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
+          }
           className="mt-6 flex w-fit gap-2 items-center mx-auto px-4 py-2 mb-6 md:mb-0 rounded-md border relative border-white font-semibold text-white transition-all duration-500 hover:shadow-xl hover:bottom-[0.8px]"
         >
           <button className="">Book Appointment</button>
         </Link>
       </section>
 
-      <section className="py-20 border-b-2 border-white">
+      <section className="bg-white py-20 border-b-2 border-white">
         <FAQ />
       </section>
     </div>
