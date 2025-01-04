@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Loading from '@/app/components/Loading';
+import SignOut from '@/app/components/SignOut';
 
 const page = () => {
   const router = useRouter();
@@ -30,7 +31,6 @@ const page = () => {
     const formData = new FormData();
     formData.append('file', image);
     formData.append('upload_preset', 'amc-asset'); // Replace with your Cloudinary upload preset
-    // formData.append('transformation', 'w_500,h_450,c_fill,q_auto');
 
     const response = await fetch(
       'https://api.cloudinary.com/v1_1/druryt8ny/image/upload',
@@ -73,29 +73,10 @@ const page = () => {
 
   console.log(currentProduct);
 
-  const updateProduct = async (productData) => {
-    // fetch(`https://amc-server.vercel.app/edit-products/${productId}`, {
-    //   method: 'PUT',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(productData),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log('data returned: ', data);
-    //     router.push('/admin-area/products');
-    //   })
-    //   .catch((err) => {
-    //     console.log('Something went wrong: ', err);
-    //   });
-  };
-
   const editProduct = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // setUploading(true);
     try {
       const productData = {
         name: name || currentProduct.name,
@@ -129,22 +110,26 @@ const page = () => {
 
   return (
     <div className="pt-24 px-12 bg-gray-300 pb-12">
-      <Link href={'/admin-area/products'} className="block w-fit mb-8">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="size-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-          />
-        </svg>
-      </Link>
+      <div className="flex justify-between items-center">
+        <Link href={'/admin-area/products'} className="block w-fit mb-8">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+        </Link>
+
+        <SignOut />
+      </div>
 
       {allProducts ? (
         <div className="bg-white w-[70%] mx-auto py-12 px-12">

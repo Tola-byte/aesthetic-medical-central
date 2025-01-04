@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Loading from '@/app/components/Loading';
 import Swal from 'sweetalert2';
+import SignOut from '@/app/components/SignOut';
 
 const page = () => {
   const [products, setProducts] = useState(null);
@@ -58,9 +59,11 @@ const page = () => {
       }
     });
   };
+
   return (
     <div className="pt-24 px-8">
-      <div className="flex justify-end">
+      <div className="flex justify-between">
+        <SignOut />
         <Link
           href={'/admin-area/products/add'}
           className="w-fit px-4 py-1 block rounded-md bg-yellow-500 text-white font-semibold"

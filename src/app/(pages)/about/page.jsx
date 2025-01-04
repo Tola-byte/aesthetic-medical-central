@@ -27,34 +27,47 @@ const page = () => {
             Welcome to your transformation
           </h1>
 
-          <div className="flex flex-col-reverse md:grid grid-cols-2 items-center gap-8 md:gap-12 px-2 pt-6 pb-10 md:px-8">
+          <div className="flex flex-col-reverse md:grid grid-cols-2 items-center md:items-stretch gap-8 md:gap-12 px-2 pt-6 pb-10 md:px-8">
             <p className="text-[14px] leading-loose">
-              Beauty is about feeling confident in your own skin and celebrating
-              what makes you unique. Dr. Isime embodies this philosophy,
-              combining her expertise in aesthetics with a personalized approach
-              to help clients achieve their most radiant selves. With a
-              background in advanced skincare and a passion for transformative
-              results, Dr. Isime brings a blend of science, artistry, and
-              empathy to every consultation and treatment. She takes the time to
-              understand your individual needs, crafting tailored solutions that
-              not only enhance your natural beauty but also inspire a renewed
-              sense of self-assurance. <br /> <br /> Dr. Isime’s approach goes
-              beyond the surface. By integrating cutting-edge techniques with a
-              deep understanding of her clients’ goals, she ensures that each
-              treatment is as unique as the individual receiving it. Her
-              commitment to excellence means that every client experiences care
-              that is professional, innovative, and designed to uplift both
-              appearance and confidence. Whether you’re seeking to rejuvenate,
-              refine, or rediscover your natural beauty, Dr. Isime is here to
-              guide you every step of the way. Together, you can embark on a
-              transformative journey toward timeless beauty and enduring
-              confidence.
+              Dr. Isima S. is an Aesthetic Physician with a focus on catering to
+              skin of colour. She developed an interest in the skin early on due
+              to her own struggles, and her core exposure started during her
+              medical internship. She sees patients with aesthetic and medical
+              skin concerns. She is proficient in laser treatments, chemical
+              peels, dermal filler injections, botulinum toxin injections and
+              many other skin rejuvenating procedures, having performed
+              thousands of treatments. <br /> <br />
+              Through her work, she has gained experience in different aspects
+              of the Aesthetic Medicine industry, and particularly enjoys
+              training others. She has found a deep sense of fulfilment with
+              helping others find their feet in this field. She is a lifelong
+              learner, and takes part in weekly classes, local and international
+              conferences to keep up with the industry on a global scale. <br />
+              <br />
+              She is certified by the American Academy of Aesthetic Medicine and
+              the International Society of Aesthetic Genital Surgery and
+              Sexology, among others. She is also an associate member of the
+              Nigerian Association of Dermatologists and a member of Canadian
+              Board of Aesthetic Medicine (CBAM) and IMCAS Academy. She has also
+              taken CPD courses with Medscape Education, St John’s Derm Academy,
+              and Harvard Medical School. She has been featured in the media
+              locally (TVC) and internationally (BBC, AFP), where she has
+              discussed topics ranging from acne and hyperpigmentation to skin
+              lightening in Africa.
             </p>
             <Image
               src={Img5}
               alt="Dr Isime"
               className="w-full h-[23rem] md:h-[34rem] object-cover object-bottom rounded-md"
             />
+          </div>
+
+          <div className="text-center md:text-left px-4 md:px-8">
+            <h2 className="text-3xl font-semibold mb-4">Mission</h2>
+            <p className="text-[14px] leading-loose">
+              To empower individuals to achieve healthy, radiant skin through
+              expert care, education, and innovative treatments.
+            </p>
           </div>
         </div>
       </div>
