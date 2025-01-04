@@ -49,7 +49,7 @@ const Checkboxes = ({ products, setProducts }) => {
   }, categories);
 
   return (
-    <div className="grid grid-cols-2 md:flex flex-col gap-2 pr-6">
+    <div className="grid grid-cols-2 md:flex flex-col gap-6 pr-6">
       {categories.map((category) => (
         <label
           className="flex items-center cursor-pointer"

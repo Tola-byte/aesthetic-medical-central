@@ -45,7 +45,7 @@ const page = () => {
       </div>
       <div className="md:flex px-8 pt-24">
         <div
-          className="md:w-[15%] px-4 py-4"
+          className="md:w-[15%] h-[50vh] px-4 py-4"
           style={{
             backgroundColor: 'white',
             borderRadius: '0.5rem',
@@ -65,7 +65,7 @@ const page = () => {
           <div className="flex-1 py-6 pb-12 grid md:grid-cols-4 gap-4">
             {products?.map((product) => (
               <div
-                className="p-2 px-6 bg-gray-100 hover:shadow-md hover:z-20 hover:scale-110 transition-all relative"
+                className="p-2 px-6 bg-gray-100 hover:shadow rounded-xl -md hover:z-20 hover:scale-105 transition-all relative"
                 key={product.name}
               >
                 <div className="flex justify-between pt-2 pb-1">
@@ -162,7 +162,7 @@ const page = () => {
                 <Image
                   src={product.image}
                   alt={`${product.name} image`}
-                  className="w-40 h-32 object-cover mb-16"
+                  className="w-40 h-32 object-cover rounded-md mb-16"
                 />
 
                 <div className="flex justify-between items-center absolute bottom-4 left-1/2 -translate-x-1/2 w-full px-4">
