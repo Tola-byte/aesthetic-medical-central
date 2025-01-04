@@ -21,7 +21,7 @@ const page = () => {
       const user = await signInWithEmailAndPassword(auth, email, password);
       setIsLoading(false);
       console.log(user);
-      router.push('/products');
+      router.push('/admin-area/products');
     } catch (err) {
       setIsLoading(false);
       console.log('Error logging in');
