@@ -168,9 +168,9 @@ const page = () => {
               <Image
                 src={product.image}
                 alt={`${product.name} image`}
-                width={40}
-                height={32}
-                className="w-40 h-32 object-cover mb-16"
+                width={80}
+                height={60}
+                className="w-80 h-60 object-cover mb-16 mx-auto"
               />
 
               <div className="flex justify-between items-center absolute bottom-4 left-1/2 -translate-x-1/2 w-full px-4">
