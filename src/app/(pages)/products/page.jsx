@@ -26,7 +26,7 @@ const page = () => {
 
   return (
     <div className=" pt-28">
-      <div className="p-16 w-[95%] md:w-[80%] mx-auto relative flex flex-col gap-8 md:flex-row justify-between items-center rounded-md bg-gray-100">
+      <div className="p-10 md:p-16 w-[95%] md:w-[80%] mx-auto relative flex flex-col gap-8 md:flex-row justify-between items-center rounded-md bg-gray-100">
         <div>
           <h1 className="text-3xl font-semibold mb-2">Unlock Your Glow</h1>
           <p className="text-sm">
@@ -45,7 +45,7 @@ const page = () => {
       </div>
       <div className="md:flex px-8 pt-24">
         <div
-          className="md:w-[15%] h-[50vh] px-4 py-4"
+          className="md:w-[15%] md:h-[50vh] px-4 md:px-4 py-4"
           style={{
             backgroundColor: 'white',
             borderRadius: '0.5rem',
@@ -56,13 +56,13 @@ const page = () => {
           <Checkboxes products={products} setProducts={setProducts} />
         </div>
 
-        <div className="flex-1 px-6 md:px-0 md:pl-12 ">
-          <div className="w-full flex flex-col md:flex-row gap-3 justify-between items-center mt-8 md:mt-0 mb-8">
+        <div className="flex-1 md:px-0 md:pl-12 ">
+          <div className="w-full flex flex-col md:flex-row gap-3 justify-between items-center mt-8 md:mt-0 md:mb-8">
             <Search products={products} setProducts={setProducts} />
             <Sort setProducts={setProducts} products={products} />
           </div>
 
-          <div className="flex-1 py-6 pb-12 grid md:grid-cols-4 gap-4">
+          <div className="flex-1 py-6 md:pb-12 grid md:grid-cols-4 gap-4">
             {products?.map((product) => (
               <div
                 className="p-2 px-6 bg-gray-100 hover:shadow rounded-xl -md hover:z-20 hover:scale-105 transition-all relative"

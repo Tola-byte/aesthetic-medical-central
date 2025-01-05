@@ -3,21 +3,21 @@ import facial from '@/app/assets/Img 32.jpg';
 import bodyTherapy from '@/app/assets/body therapy.jpg';
 export const listofservices = [
   {
-    title: 'Consultation',
+    title: 'Consultations',
     id: 1,
     image: consult,
     description:
       ' Schedule a personalized consultation with our expert team to discuss your aesthetic goals.',
   },
   {
-    title: 'Facial',
+    title: 'Medical-Grade Facials',
     id: 2,
     image: facial,
     description:
       'Experience the ultimate glow — our tailored facials refresh and rejuvenate your skin for timeless beauty',
   },
   {
-    title: 'Body Therapy',
+    title: 'Injectables',
     id: 3,
     image: bodyTherapy,
     description:

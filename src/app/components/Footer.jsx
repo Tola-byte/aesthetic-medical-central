@@ -32,7 +32,7 @@ const Footer = () => {
             src={logo}
             width={64}
             height={64}
-            className="object-fit rounded-full"
+            className="object-fit rounded-md"
             alt="amc logo"
           />
           <p className="hidden md:block relative top-1 font-semibold text-2xl">

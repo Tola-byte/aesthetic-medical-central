@@ -14,6 +14,7 @@ import {
 const page = () => {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState('');
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
   const products = useSelector((store) => store.productSlice.products);
   const calculateProductPrice = (product) => {
     return product.price * product.count;
@@ -43,10 +44,24 @@ const page = () => {
     publicKey: 'pk_test_d4092ce3db5a82a4b470336b1bff4f34cbb49ae2',
     text: 'Pay Now',
     onSuccess: (response) => {
-      alert(`Payment successful! Reference: ${response.reference}`);
-      // Optionally call your backend to verify the payment
+      // alert(`Payment successful! Reference: ${response.reference}`);
+      setPaymentSuccess(true)
+      setEmail("")
+      setOpen(false)
+      sendToWhatsApp();
+    
     },
     onClose: () => alert('Transaction was not completed, window closed.'),
+  };
+
+  const sendToWhatsApp = () => {
+    const orderDetails = products
+      .map((product) => `${product.name} - ${product.count} x ₦${product.price}`)
+      .join('%0A');
+    const message = `I paid for the following goods:%0A%0A${orderDetails}%0A%0ATotal: ₦${totalPrice}`;
+    const phoneNumber = '2349073684892'; // Replace with admin's WhatsApp number
+    //https://wa.me/2349015151533 // this is the admin number wajud
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
   return (
     <div className="pt-24 pb-8 max-w-[80%] mx-auto">
@@ -203,6 +218,14 @@ const page = () => {
           </div>
         </div>
       )}
+
+      {/* {paymentSuccess && (
+        <div className="mt-6">
+          <button onClick={sendToWhatsApp} className="bg-green-500 text-white p-2 rounded">
+            Send Order Details to Admin on WhatsApp
+          </button>
+        </div>
+      )} */}
     </div>
   );
 };

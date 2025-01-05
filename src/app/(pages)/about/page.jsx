@@ -23,7 +23,7 @@ const page = () => {
 
       <div className="bg-white shadow-md rounded-md min-h-[25vh] py-12 flex items-center w-[95%] md:w-[85%] mx-auto relative -top-40 z-10 px-4 md:px-12 -mb-12">
         <div className="">
-          <h1 className="text-4xl font-semibold  mb-6 text-center">
+          <h1 className="text-3xl md:text-4xl font-semibold  md:mb-6 text-center">
             Welcome to your transformation
           </h1>
 

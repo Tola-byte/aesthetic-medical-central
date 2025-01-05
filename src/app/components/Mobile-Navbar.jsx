@@ -27,7 +27,7 @@ const MobileNav = () => {
                   className="w-full flex justify-center gap-[2px] items-center"
                 >
                   <span>{link.label}</span>
-                  <svg
+                  {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ const MobileNav = () => {
                       strokeLinejoin="round"
                       d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
                     />
-                  </svg>
+                  </svg> */}
                 </Link>
               </li>
             );

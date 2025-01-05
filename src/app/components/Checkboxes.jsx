@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { allProducts } from './productsList';
 
 const Checkboxes = ({ products, setProducts }) => {
-  const [filteredProducts, setfilteredProducts] = useState([]);
+  // const [filteredProducts, setfilteredProducts] = useState([]);
 
   const [categories, setCategories] = useState([
     { label: 'cream', checkedStatus: false },
@@ -49,7 +49,7 @@ const Checkboxes = ({ products, setProducts }) => {
   }, categories);
 
   return (
-    <div className="grid grid-cols-2 md:flex flex-col gap-6 pr-6">
+    <div className="grid grid-cols-2 md:flex flex-col gap-6 md:pr-6">
       {categories.map((category) => (
         <label
           className="flex items-center cursor-pointer"
