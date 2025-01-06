@@ -1,15 +1,13 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { allProducts } from './productsList';
 
-const Checkboxes = ({ products, setProducts }) => {
-  // const [filteredProducts, setfilteredProducts] = useState([]);
-
+const Checkboxes = ({ setFetchedProducts }) => {
+  const [products, setProducts] = useState(null);
+  const [isProductsReady, setIsProductsReady] = useState(false);
   const [categories, setCategories] = useState([
     { label: 'cream', checkedStatus: false },
     { label: 'serum', checkedStatus: false },
-    { label: 'cleanser', checkedStatus: false },
-    { label: 'mask', checkedStatus: false },
+    { label: 'solution', checkedStatus: false },
   ]);
 
   const toggleCheckedStatus = (category) => {
@@ -24,29 +22,49 @@ const Checkboxes = ({ products, setProducts }) => {
       checkedStatus: !category.checkedStatus,
     });
 
-    setCategories(newCategories);
+    if (newCategories.length === 0) {
+      setCategories([
+        { label: 'cream', checkedStatus: false },
+        { label: 'serum', checkedStatus: false },
+        { label: 'solution', checkedStatus: false },
+      ]);
+    } else {
+      setCategories([...newCategories]);
+    }
   };
 
   useEffect(() => {
-    const checkedCategories = categories.filter(
-      (cat) => cat.checkedStatus === true,
-    );
+    fetch('https://amc-server.vercel.app/products', {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('data returned: ', data);
+        setIsProductsReady(true);
+        setProducts(data.products);
+        const checkedCategories = categories.filter(
+          (cat) => cat.checkedStatus === true,
+        );
 
-    const labels = [];
-    checkedCategories.forEach((cat) => {
-      labels.push(cat.label);
-    });
+        const labels = [];
+        checkedCategories.forEach((cat) => {
+          labels.push(cat.label);
+        });
 
-    const requiredProducts = allProducts.filter((product) =>
-      labels.includes(product.category),
-    );
-    console.log(requiredProducts);
-    if (labels.length !== 0) {
-      setProducts([...requiredProducts]);
-    } else {
-      setProducts([...allProducts]);
-    }
-  }, categories);
+        const requiredProducts = products?.filter((product) =>
+          labels.includes(product.category),
+        );
+        console.log(requiredProducts);
+        if (labels.length !== 0) {
+          setFetchedProducts([...requiredProducts]);
+        } else {
+          setFetchedProducts([...products]);
+        }
+      })
+      .catch((err) => {
+        console.log('Something went wrong: ', err);
+      });
+  }, [categories]);
 
   return (
     <div className="grid grid-cols-2 md:flex flex-col gap-6 md:pr-6">

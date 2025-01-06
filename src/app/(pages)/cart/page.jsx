@@ -9,6 +9,7 @@ import {
   increaseCount,
   decreaseCount,
   removeProduct,
+  clearCart,
 } from '@/app/features/productSlice';
 
 const page = () => {
@@ -45,18 +46,20 @@ const page = () => {
     text: 'Pay Now',
     onSuccess: (response) => {
       // alert(`Payment successful! Reference: ${response.reference}`);
-      setPaymentSuccess(true)
-      setEmail("")
-      setOpen(false)
+      setPaymentSuccess(true);
+      setEmail('');
+      setOpen(false);
       sendToWhatsApp();
-    
+      dispatch(clearCart());
     },
     onClose: () => alert('Transaction was not completed, window closed.'),
   };
 
   const sendToWhatsApp = () => {
     const orderDetails = products
-      .map((product) => `${product.name} - ${product.count} x ₦${product.price}`)
+      .map(
+        (product) => `${product.name} - ${product.count} x ₦${product.price}`,
+      )
       .join('%0A');
     const message = `I paid for the following goods:%0A%0A${orderDetails}%0A%0ATotal: ₦${totalPrice}`;
     const phoneNumber = '2349073684892'; // Replace with admin's WhatsApp number

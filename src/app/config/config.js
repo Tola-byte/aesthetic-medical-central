@@ -96,3 +96,78 @@ export const ServicesData = [
     body: ['LED Therapy', 'Sclerotherapy'],
   },
 ];
+
+export const HomeProducts = [
+  {
+    name: 'Goodskn Sunscreen',
+    price: 32500,
+    category: 'cream',
+    count: 0,
+    image:
+      'https://res.cloudinary.com/druryt8ny/image/upload/v1736177894/amc-asset/fied55kb762uwq5hbqhl.jpg',
+  },
+  {
+    name: 'Alpha Arbutin Concentrate',
+    price: 69000,
+    category: 'serum',
+    count: 0,
+    image:
+      'https://res.cloudinary.com/druryt8ny/image/upload/v1736177987/amc-asset/lngbcfq4ibduzpulzw4u.jpg',
+  },
+  {
+    name: 'Cica Well Serum',
+    price: 24624,
+    category: 'serum',
+    count: 0,
+    image:
+      'https://res.cloudinary.com/druryt8ny/image/upload/v1736178049/amc-asset/fozyq2kkagqivc6xglw4.jpg',
+  },
+  {
+    name: 'Muldream Brightening Facial Glow Cream',
+    price: 43950,
+    category: 'cream',
+    count: 0,
+    image:
+      'https://res.cloudinary.com/druryt8ny/image/upload/v1736178116/amc-asset/gpqp7yz2zlqdpvmpqqky.jpg',
+  },
+  {
+    name: 'Cica Well Cream',
+    price: 25328,
+    category: 'cream',
+    count: 0,
+    image:
+      'https://res.cloudinary.com/druryt8ny/image/upload/v1736178174/amc-asset/bfmvfjhosdvcqgxflnju.jpg',
+  },
+  {
+    name: 'Ginger 6 Active Water Cream',
+    price: 58950,
+    category: 'cream',
+    count: 0,
+    image:
+      'https://res.cloudinary.com/druryt8ny/image/upload/v1736190287/amc-asset/uabo5rtj1d8blvmalrmq.jpg',
+  },
+  {
+    name: 'Muldream Deep Repair Serum',
+    price: 41750,
+    category: 'serum',
+    count: 0,
+    image:
+      'https://res.cloudinary.com/druryt8ny/image/upload/v1736190333/amc-asset/iuj8db2pco8av5c5d4om.jpg',
+  },
+  {
+    name: 'Dr Oracle TerpinaC Ampoule',
+    price: 20994,
+    category: 'solution',
+    count: 0,
+    image:
+      'https://res.cloudinary.com/druryt8ny/image/upload/v1736190412/amc-asset/xg58coye8qdj7uncrh8q.jpg',
+  },
+  {
+    name: 'Cica Well Booster',
+    price: 21704,
+    category: 'solution',
+    count: 0,
+    image:
+      'https://res.cloudinary.com/druryt8ny/image/upload/v1736190475/amc-asset/wapjncm2l0onk91z9k2g.jpg',
+  },
+];
