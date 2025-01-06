@@ -1,10 +1,26 @@
-import React from 'react';
-import { allProducts } from './productsList';
+'use client';
+import React, { useState, useEffect } from 'react';
 
 const Search = ({ setProducts }) => {
+  const [allProducts, setAllProducts] = useState(null);
+
+  useEffect(() => {
+    fetch('https://amc-server.vercel.app/products', {
+      method: 'GET',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('data returned: ', data);
+        setAllProducts(data.products);
+      })
+      .catch((err) => {
+        console.log('Something went wrong: ', err);
+      });
+  }, []);
+
   const handleInputChange = (e) => {
     const searchText = e.target.value;
-    const filteredProducts = allProducts.filter((product) =>
+    const filteredProducts = allProducts?.filter((product) =>
       product.name.toLowerCase().includes(searchText.toLowerCase()),
     );
     if (filteredProducts.length === 0) {

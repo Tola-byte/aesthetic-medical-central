@@ -22,6 +22,18 @@ import Items from '@/app/components/FAQ/Item';
 import Accordion from '@/app/components/FAQ/Accordion';
 
 const page = () => {
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 10000,
+  //   slidesToShow: 5,
+  //   slidesToScroll: 2,
+  //   autoplay: true,
+  //   autoplaySpeed: 0,
+  //   cssEase: 'linear',
+  //   pauseOnHover: false,
+  // };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -32,7 +44,31 @@ const page = () => {
     autoplaySpeed: 0,
     cssEase: 'linear',
     pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1024, 
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 768, 
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, 
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   return (
     <div className="bg-[#fff]">
       <section className="bg-services bg-cover bg-center pt-36 md:pt-52 pb-20 md:pb-40 px-10 md:px-20 ">
@@ -70,28 +106,28 @@ const page = () => {
 
       <Slider {...settings} className=" flex gap-4">
         <div className="p-2">
-          <Image src={Img12} className="h-[40vh] rounded-lg" alt="Slide 1" />
+          <Image src={Img12} className="w-[30vh] h-[40vh] md:h-[40vh] md:w-[40vh] rounded-lg" alt="Slide 1" />
         </div>
         <div className="p-2">
-          <Image src={Img28} className="h-[40vh] rounded-lg" alt="Slide 2" />
+          <Image src={Img28} className="w-[30vh] h-[40vh] md:h-[40vh] md:w-[40vh] rounded-lg" alt="Slide 2" />
         </div>
         <div className="p-2">
-          <Image src={Img35} className="h-[40vh] rounded-lg" alt="Slide 3" />
+          <Image src={Img35} className="w-[30vh] h-[40vh] md:h-[40vh] md:w-[40vh] rounded-lg" alt="Slide 3" />
         </div>
         <div className="p-2">
-          <Image src={Img16} className="h-[40vh] rounded-lg" alt="Slide 3" />
+          <Image src={Img16} className="w-[30vh] h-[40vh] md:h-[40vh] md:w-[40vh] rounded-lg" alt="Slide 3" />
         </div>
         <div className="p-2">
-          <Image src={Img42} className="h-[40vh] rounded-lg" alt="Slide 3" />
+          <Image src={Img42} className="w-[30vh] h-[40vh] md:h-[40vh] md:w-[40vh] rounded-lg" alt="Slide 3" />
         </div>
         <div className="p-2">
-          <Image src={Img52} className="h-[40vh] rounded-lg" alt="Slide 3" />
+          <Image src={Img52} className="w-[30vh] h-[40vh] md:h-[40vh] md:w-[40vh] rounded-lg" alt="Slide 3" />
         </div>
         <div className="p-2">
-          <Image src={Img21} className="h-[40vh] rounded-lg" alt="Slide 3" />
+          <Image src={Img21} className="w-[30vh] h-[40vh] md:h-[40vh] md:w-[40vh] rounded-lg" alt="Slide 3" />
         </div>
         <div className="p-2">
-          <Image src={Img32} className="h-[40vh] rounded-lg" alt="Slide 3" />
+          <Image src={Img32} className="w-[30vh] h-[40vh] md:h-[40vh] md:w-[40vh] rounded-lg" alt="Slide 3" />
         </div>
       </Slider>
     </div>

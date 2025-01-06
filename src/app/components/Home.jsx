@@ -18,7 +18,7 @@ const HomeComponent = () => {
           <h1 className="font-semibold text-3xl md:text-7xl  mb-2">
             Radiant Skin <br /> Timeless Beauty.
           </h1>
-          <p className="text-lg px-2 w-3/4 mb-8">
+          <p className="text-sm md:text-lg px-2 w-full md:w-3/4 mb-8">
             Experience personalized skin care solutions, luxurious products, and
             expert consultations that unlock your skin's natural glow and
             empower you with timeless confidence and beauty.
@@ -36,7 +36,7 @@ const HomeComponent = () => {
         <Image
           src={image16}
           alt="image 16"
-          className="w-[95%] object-fit rounded-2xl hover:scale-105 transform transition duration-300 ease-in-out"
+          className="w-full md:w-[95%] object-fit rounded-2xl hover:scale-105 transform transition duration-300 ease-in-out"
         />
       </div>
       <section className="bg-white py-12 px-4 md:px-20">
@@ -50,13 +50,13 @@ const HomeComponent = () => {
                 src={item.image}
                 key={item.id}
                 alt="image 21"
-                className="w-[50%] h-[70%] object-fit rounded-xl"
+                className="w-full md:w-[50%] h-[70%] object-fit rounded-xl"
               />
               <div className="text-center md:text-left flex flex-col gap-4">
                 <h3 className="text-[#D4AF37] font-bold text-3xl">
                   {item.title}
                 </h3>
-                <p className="text-md w-[80%] mx-auto">{item.description}</p>
+                <p className="text-md w-full md:w-[80%]">{item.description}</p>
               </div>
             </div>
           ))}
