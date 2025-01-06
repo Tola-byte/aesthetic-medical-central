@@ -1,37 +1,60 @@
 import React, { useState } from 'react';
 import lady2 from '../../assets/lady2.jpg';
 import profile3 from '../../assets/profile-3.jpg';
+import profile6 from '../../assets/profile-6.jpg';
 import profile12 from '../../assets/profile-12.jpg';
-import story4 from '../../assets/story-4.jpg';
+import profile20 from '../../assets/profile-20.jpg';
+import feed4 from '../../assets/feed-4.jpg';
+import spouse from '../../assets/taiwo.jpg';
 import Image from 'next/image';
 
 const testimonials = [
   {
     id: 1,
-    name: 'Alice Johnson',
+    name: 'J.A',
     image: lady2,
-    comment:
-      'This product completely transformed my skincare routine. I highly recommend it!',
+    comment: 'Thank you for showing genuine concern',
   },
   {
     id: 2,
-    name: 'Mark Thompson',
-    image: profile3,
+    name: 'D.T',
+    image: feed4,
     comment:
-      'Exceptional service and amazing results! My skin has never felt better.',
+      'Good evening Doctor. How are you? I want to thank you for being so pleasant and good to us yesterday! We are happy to have met with you. God bless you and yours. Amen thanks.',
   },
   {
     id: 3,
-    name: 'Sarah Lee',
+    name: 'K.O',
     image: profile12,
-    comment: 'I saw a visible difference within weeks. Absolutely worth it!',
+    comment:
+      'Dr Isima. Good afternoon. I got those things and... they are working like magic. Thanks go much!',
   },
   {
     id: 4,
-    name: 'James Smith',
-    image: story4,
+    name: "O.S (CLIENT'S GRATEFUL SPOUSE)",
+    image: spouse,
+    comment: 'Her lips are much juicier. I highly recommend.',
+  },
+  {
+    id: 5,
+    name: 'M.S',
+    image: profile6,
     comment:
-      'The consultation was incredibly insightful. My skin feels healthier than ever.',
+      "Reaction I've battling with by myself for a whole month!!! Left after 2 days of using what you prescribed. Thanks Dr. Isima. My skin is looking better and the colour is getting back. ",
+  },
+  {
+    id: 6,
+    name: 'A.P.',
+    image: profile3,
+    comment:
+      "Everyone is saying my skin is glowing ooo. My face is looking really nice. And I'm like it's Dr. Isima o.",
+  },
+  {
+    id: 7,
+    name: 'T.O',
+    image: profile20,
+    comment:
+      'My skin doctor, thank you so much! <br/> Been using your recommended products in the last 2 weeks and my face feels fresher.',
   },
 ];
 
