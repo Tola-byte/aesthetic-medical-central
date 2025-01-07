@@ -86,10 +86,10 @@ const page = () => {
               />
             </div>
 
-            <div className="flex-1 py-6 md:pb-12 grid md:grid-cols-4 gap-4">
+            <div className="flex-1 py-6 md:pb-12 grid md:grid-cols-4 gap-8">
               {fetchedProducts?.map((product) => (
                 <div
-                  className="p-2 px-6 bg-gray-100 hover:shadow-md hover:z-20 hover:scale-110 transition-all relative"
+                  className="p-2 px-6 bg-gray-100 rounded-lg hover:shadow-md hover:z-20 hover:scale-105 transition-all relative"
                   key={product.name}
                 >
                   <div className="flex justify-between pt-2 pb-1">
