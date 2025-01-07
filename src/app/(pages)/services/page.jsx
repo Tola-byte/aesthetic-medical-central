@@ -64,6 +64,7 @@ const page = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          speed: 25000
         },
       },
     ],
@@ -89,7 +90,7 @@ const page = () => {
                   'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
                 }
               >
-                <button className="bg-[#d4af37] flex justify-center text-white rounded-lg w-3/4 p-2 hover:bg-white border-2 border-[#d4af37] hover:text-[#d4af37]">
+                <button className="bg-[#d4af37] flex justify-center m-auto text-white rounded-lg w-3/4 p-2 hover:bg-white border-2 border-[#d4af37] hover:text-[#d4af37]">
                   Book an Appointment
                 </button>
               </Link>
