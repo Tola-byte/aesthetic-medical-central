@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .clip-it {
+    clip-path: polygon(20% 0%, 100% 0, 80% 100%, 0% 100%);
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -9,8 +15,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #0a0a0a;
+    --background: #ededed;
   }
 }
 
