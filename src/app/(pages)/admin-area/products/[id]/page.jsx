@@ -109,7 +109,7 @@ const page = () => {
   };
 
   return (
-    <div className="pt-24 px-12 bg-gray-300 pb-12">
+    <div className="pt-28 px-12 bg-gray-300 pb-12">
       <div className="flex justify-between items-center">
         <Link href={'/admin-area/products'} className="block w-fit mb-8">
           <svg
@@ -220,7 +220,7 @@ const page = () => {
 
           {/* End of image uploader */}
           <button
-            className="cursor-pointer  mx-auto w-40 h-8 flex justify-center items-center rounded-sm bg-yellow-500 hover:bg-yellow-600 text-white font-semibold"
+            className="cursor-pointer  mx-auto w-40 h-8 flex justify-center items-center rounded-sm bg-[#D4AF37] hover:bg-yellow-600 text-white font-semibold"
             onClick={editProduct}
           >
             {isLoading ? (

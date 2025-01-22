@@ -61,8 +61,8 @@ const page = () => {
         (product) => `${product.name} - ${product.count} x ₦${product.price}`,
       )
       .join('%0A');
-    const message = `I paid for the following goods:%0A%0A${orderDetails}%0A%0ATotal: ₦${totalPrice}`;
-    const phoneNumber = '2349073684892'; // Replace with admin's WhatsApp number
+    const message = `I want to make payment for the following goods:%0A%0A${orderDetails}%0A%0ATotal: ₦${totalPrice}`;
+    const phoneNumber = '2348143211592'; // Replace with admin's WhatsApp number
     //https://wa.me/2349015151533 // this is the admin number wajud
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
@@ -177,11 +177,12 @@ const page = () => {
       )}
 
       {products.length > 0 && (
-        <button className="m-auto" onClick={() => setOpen(true)}>
+        <button className="m-auto" onClick={() => sendToWhatsApp()}>
           Proceed to payment
         </button>
       )}
 
+      {/* this here is unnecessary but leave for now */}
       {open && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg shadow-lg w-full max-w-sm mx-4">
@@ -216,7 +217,7 @@ const page = () => {
                 Submit
               </button> */}
 
-              <PaystackButton disabled={!email} {...componentProps} />
+              {/* <PaystackButton disabled={!email} {...componentProps} /> */}
             </div>
           </div>
         </div>

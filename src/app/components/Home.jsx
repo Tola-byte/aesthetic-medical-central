@@ -12,16 +12,20 @@ import TestimonialComponent from './testimonials/Testimonial';
 
 const HomeComponent = () => {
   return (
-    <div className=" text-black pt-4 pb-16">
+    <div className=" text-black pt-12 pb-16">
       <div className="bg-[#D4AF37] grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-4 md:px-20 pb-8">
         <div className="pr-6">
           <h1 className="font-semibold text-3xl md:text-7xl  mb-2">
             Radiant Skin <br /> Timeless Beauty.
           </h1>
-          <p className="text-sm md:text-lg px-2 w-full md:w-3/4 mb-8">
+
+          <p className="text-sm md:text-lg px-2 w-full md:w-3/4 mb-2">
             Experience personalized skin care solutions, luxurious products, and
             expert consultations that unlock your skin's natural glow and
             empower you with timeless confidence and beauty.
+          </p>
+          <p className="text-sm md:text-lg px-2 w-full md:w-3/4 mb-8">
+            Welcome to your transformation.
           </p>
           <Link
             href={

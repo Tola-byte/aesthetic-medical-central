@@ -197,7 +197,7 @@ const page = () => {
         </div>
 
         <button
-          className="cursor-pointer  mx-auto w-40 h-8 flex justify-center items-center rounded-sm bg-yellow-500 hover:bg-yellow-600 text-white font-semibold"
+          className="cursor-pointer  mx-auto w-40 h-8 flex justify-center items-center rounded-sm bg-[#D4AF37] hover:bg-yellow-600 text-white font-semibold"
           onClick={addProduct}
         >
           {isLoading ? (

@@ -42,7 +42,7 @@ const page = () => {
   };
 
   return (
-    <div className=" pt-28">
+    <div className="pt-32">
       <div className="p-10 md:p-16 w-[95%] md:w-[80%] mx-auto relative flex flex-col gap-8 md:flex-row justify-between items-center rounded-md bg-gray-100">
         <div>
           <h1 className="text-3xl font-semibold mb-2">Unlock Your Glow</h1>
@@ -196,7 +196,7 @@ const page = () => {
                       &#8358;{' '}
                       {new Intl.NumberFormat('en-US').format(product.price)}
                     </p>
-                    <button className="block w-fit px-2 py-1 text-sm bg-yellow-500 text-white rounded-md">
+                    <button className="block w-fit px-2 py-1 text-sm bg-[#D4AF37] text-white rounded-md">
                       {addedProducts.some((p) => p.name === product.name) ? (
                         <p onClick={() => removeFromCart(product)}>Remove</p>
                       ) : (
