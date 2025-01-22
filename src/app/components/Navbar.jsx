@@ -45,15 +45,27 @@ const Navbar = () => {
       <div className="fixed z-30 top-0 left-0 w-full bg-white shadow-md py-3 px-4 flex justify-between items-center">
         {/* Logo and Name */}
 
-        <Link href="/" className="flex items-center gap-[2px]">
+        <Link href="/" className=" items-center gap-[2px] hidden md:flex">
           <Image
             src={logo}
-            width={32}
-            height={32}
+            width={60}
+            height={60}
             className="object-fit"
             alt="amc logo"
           />
-          <p className="hidden md:block text-2xl text-yellow-500 relative top-1 font-swemiold">
+          <p className="hidden md:block text-2xl text-[#D4AF37] relative top-1 font-semibold">
+            Aesthetic Medicine Central
+          </p>
+        </Link>
+        <Link href="/" className="flex items-center gap-[2px] md:hidden">
+          <Image
+            src={logo}
+            width={48}
+            height={48}
+            className="object-fit"
+            alt="amc logo"
+          />
+          <p className="hidden md:block text-2xl text-[#D4AF37] relative top-1 font-swemiold">
             Aesthetic Medicine Central
           </p>
         </Link>

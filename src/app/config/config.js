@@ -1,6 +1,8 @@
 import consult from '@/app/assets/Img 8.jpg';
 import facial from '@/app/assets/Img 32.jpg';
-import bodyTherapy from '@/app/assets/body therapy.jpg';
+import bodyTherapy from '@/app/assets/services/Img 28.png';
+import skinTag from '@/app/assets/services/Img 42.jpg';
+
 export const listofservices = [
   {
     title: 'Consultations',
@@ -22,6 +24,13 @@ export const listofservices = [
     image: bodyTherapy,
     description:
       ' Reveal your best self with aesthetic therapy because beauty is more than skin deep.',
+  },
+  {
+    title: 'Skin Tag Removal',
+    id: 4,
+    image: skinTag,
+    description:
+      'Quick and safe skin tag removal for smoother, clearer skin and renewed confidence.',
   },
 ];
 
