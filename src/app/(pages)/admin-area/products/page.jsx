@@ -61,12 +61,12 @@ const page = () => {
   };
 
   return (
-    <div className="pt-24 px-8">
+    <div className="pt-28 px-8">
       <div className="flex justify-between">
         <SignOut />
         <Link
           href={'/admin-area/products/add'}
-          className="w-fit px-4 py-1 block rounded-md bg-yellow-500 text-white font-semibold"
+          className="w-fit px-4 py-1 block rounded-md bg-[#D4AF37] text-white font-semibold"
         >
           Add Product
         </Link>
