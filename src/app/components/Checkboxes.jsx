@@ -5,14 +5,18 @@ const Checkboxes = ({ setFetchedProducts }) => {
   const [products, setProducts] = useState(null);
   const [isProductsReady, setIsProductsReady] = useState(false);
   const [categories, setCategories] = useState([
-    { label: 'cream', checkedStatus: false },
+    { label: 'moisturizer', checkedStatus: false },
+    { label: 'cleanser', checkedStatus: false },
     { label: 'serum', checkedStatus: false },
-    { label: 'solution', checkedStatus: false },
+    { label: 'treatment', checkedStatus: false },
+    { label: 'masks', checkedStatus: false },
+    { label: 'toner', checkedStatus: false },
   ]);
 
   const toggleCheckedStatus = (category) => {
     const categoryIndex = categories.findIndex(
-      (cat) => cat.label === category.label,
+      (cat) =>
+        cat.label.toLocaleLowerCase() === category.label.toLocaleLowerCase(),
     );
 
     const newCategories = [...categories];
@@ -24,9 +28,12 @@ const Checkboxes = ({ setFetchedProducts }) => {
 
     if (newCategories.length === 0) {
       setCategories([
-        { label: 'cream', checkedStatus: false },
+        { label: 'moisturizer', checkedStatus: false },
+        { label: 'cleanser', checkedStatus: false },
         { label: 'serum', checkedStatus: false },
-        { label: 'solution', checkedStatus: false },
+        { label: 'treatment', checkedStatus: false },
+        { label: 'masks', checkedStatus: false },
+        { label: 'toner', checkedStatus: false },
       ]);
     } else {
       setCategories([...newCategories]);
@@ -52,7 +59,7 @@ const Checkboxes = ({ setFetchedProducts }) => {
         });
 
         const requiredProducts = products?.filter((product) =>
-          labels.includes(product.category),
+          labels.includes(product.category.toLowerCase()),
         );
         console.log(requiredProducts);
         if (labels.length !== 0) {
