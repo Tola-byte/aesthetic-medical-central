@@ -23,7 +23,7 @@ export const listofservices = [
     id: 3,
     image: bodyTherapy,
     description:
-      ' Reveal your best self with aesthetic therapy because beauty is more than skin deep.',
+      'Reveal your best self with aesthetic therapy because beauty is more than skin deep.',
   },
   {
     title: 'Skin Tag Removal',

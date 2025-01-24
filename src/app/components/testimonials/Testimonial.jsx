@@ -84,11 +84,11 @@ const TestimonialComponent = () => {
               key={testimonial.id}
               className="min-w-full p-6 flex flex-col items-center justify-center text-center"
             >
-              <Image
+              {/* <Image
                 src={testimonial.image}
                 alt={testimonial.name}
                 className="w-24 h-24 rounded-full mb-4 object-cover"
-              />
+              /> */}
               <p className="text-gray-700 mb-4 italic">
                 "{testimonial.comment}"
               </p>
