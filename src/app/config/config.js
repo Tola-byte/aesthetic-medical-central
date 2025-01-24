@@ -16,7 +16,7 @@ export const listofservices = [
     id: 2,
     image: facial,
     description:
-      'Experience the ultimate glow — our tailored facials refresh and rejuvenate your skin for timeless beauty',
+      'Experience the ultimate glow — our tailored facials refresh and rejuvenate your skin for timeless beauty.',
   },
   {
     title: 'Injectables',
@@ -26,11 +26,11 @@ export const listofservices = [
       'Reveal your best self with aesthetic therapy because beauty is more than skin deep.',
   },
   {
-    title: 'Skin Tag Removal',
+    title: 'Chemical Peel',
     id: 4,
     image: skinTag,
     description:
-      'Quick and safe skin tag removal for smoother, clearer skin and renewed confidence.',
+      'An effective skin treatment that exfoliates the skin, removing dead cells to reveal a smoother and brighter complexion.',
   },
 ];
 

@@ -63,7 +63,7 @@ const page = () => {
       {isProductsReady ? (
         <div className="md:flex px-8 pt-24">
           <div
-            className="md:w-[15%] md:h-[50vh] px-4 md:px-4 py-4"
+            className="md:w-[15%] md:h-[50vh] md:min-h-fit px-4 md:px-4 py-4"
             style={{
               backgroundColor: 'white',
               borderRadius: '0.5rem',
