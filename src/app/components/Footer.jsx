@@ -152,7 +152,7 @@ const Footer = () => {
               </Link>
               <Link
                 className="flex gap-2 items-center"
-                href={'https://wa.me/c/2349015151533'}
+                href={'https://wa.me/2349015151533'}
                 target="_blank"
               >
                 <svg
