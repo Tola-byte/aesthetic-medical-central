@@ -17,6 +17,7 @@ import { ServicesData } from '@/app/config/config';
 
 import Items from '@/app/components/FAQ/Item';
 import Accordion from '@/app/components/FAQ/Accordion';
+import NestedDropdown from '@/app/components/FAQ/DoubleNesting';
 
 const page = () => {
   // const settings = {
@@ -94,11 +95,12 @@ const page = () => {
             </div>
           </div>
 
-          <div className="w-[100vw] md:w-3/4 md:p-10">
+          {/* <div className="w-[100vw] md:w-3/4 md:p-10">
             <Accordion>
               <Items data={ServicesData} />
             </Accordion>
-          </div>
+          </div> */}
+          <NestedDropdown />
         </div>
       </div>
 
