@@ -78,7 +78,7 @@ const page = () => {
 
       <div className="bg-white w-full flex flex-col md:justify-center p-2 md:p-20">
         <div className="flex flex-col-reverse md:flex-row">
-          <div className="w-full md:w-1/2 md:p-20 md:ml-20">
+          <div className="md:py-20 md:px-10">
             <h1 className="font-extrabold text-2xl text-center md:text-4xl text-[#D4AF37]">
               NEED A GLOW-UP?
             </h1>
@@ -95,11 +95,6 @@ const page = () => {
             </div>
           </div>
 
-          {/* <div className="w-[100vw] md:w-3/4 md:p-10">
-            <Accordion>
-              <Items data={ServicesData} />
-            </Accordion>
-          </div> */}
           <NestedDropdown />
         </div>
       </div>
