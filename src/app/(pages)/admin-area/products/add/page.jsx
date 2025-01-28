@@ -9,6 +9,7 @@ const page = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [category, setCategory] = useState('');
+  const [description, setDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
   // const [uploading, setUploading] = useState(false);
@@ -40,49 +41,13 @@ const page = () => {
 
       const data = await response.json();
       // setUploading(false);
-      console.log(data.secure_url);
+      // console.log(data.secure_url);
       return data.secure_url; // Get the image URL from Cloudinary
     } catch (error) {
       console.error('Error uploading image:', error);
       // setUploading(false);
       return null;
     }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const imageUrl = await handleImageUpload();
-    if (!imageUrl) return;
-
-    const productData = {
-      name,
-      price: parseFloat(price),
-      image: imageUrl,
-    };
-
-    console.log(productData);
-    //  try {
-    //    const response = await fetch("/api/products", {
-    //      method: "POST",
-    //      headers: {
-    //        "Content-Type": "application/json",
-    //      },
-    //      body: JSON.stringify(productData),
-    //    });
-
-    //    if (!response.ok) {
-    //      throw new Error("Failed to upload product");
-    //    }
-
-    //    alert("Product uploaded successfully!");
-    //    setName("");
-    //    setPrice("");
-    //    setImage(null);
-    //  } catch (error) {
-    //    console.error("Error saving product:", error);
-    //    alert("Failed to upload product. Please try again.");
-    //  }
   };
 
   const addProduct = async (e) => {
@@ -94,9 +59,8 @@ const page = () => {
       price,
       category,
       image: imageUrl,
+      description,
     };
-
-    console.log(productData);
 
     fetch('https://amc-server.vercel.app/add-products', {
       method: 'POST',
@@ -175,7 +139,20 @@ const page = () => {
           />
         </div>
 
-        <div className="flex gap-4 items-center mb-6">
+        <div className="flex items-center gap-4 mb-4">
+          <label htmlFor="category" className="w-[12rem]">
+            Product Description
+          </label>
+
+          <textarea
+            rows={5}
+            className="focus:outline-none px-2 py-2 rounded-md flex-1 bg-gray-300"
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Product Description"
+          ></textarea>
+        </div>
+
+        <div className="flex gap-4 items-center mb-6 relative left-1">
           <label htmlFor="file-upload" className="w-[16rem]">
             Product Image
           </label>

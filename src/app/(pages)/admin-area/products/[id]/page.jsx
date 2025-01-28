@@ -23,6 +23,7 @@ const page = () => {
   const [name, setName] = useState(currentProduct?.name);
   const [price, setPrice] = useState(currentProduct?.price);
   const [category, setCategory] = useState(currentProduct?.category);
+  const [description, setDescription] = useState(currentProduct?.description);
   const [image, setImage] = useState(currentProduct?.image);
   const [imageUrl, setImageUrl] = useState('');
 
@@ -82,6 +83,7 @@ const page = () => {
         name: name || currentProduct.name,
         price: price || currentProduct.price,
         category: category || currentProduct.category,
+        description: description || currentProduct.description,
         image: imageUrl || currentProduct.image,
       };
 
@@ -168,6 +170,19 @@ const page = () => {
               className="focus:outline-none px-2 py-2 rounded-md flex-1 bg-gray-300"
               onChange={(e) => setCategory(e.target.value)}
             />
+          </div>
+
+          <div className="flex items-center gap-4 mb-4">
+            <label htmlFor="category" className="w-[12rem]">
+              Product Description
+            </label>
+
+            <textarea
+              rows={5}
+              className="focus:outline-none px-2 py-2 rounded-md flex-1 bg-gray-300 resize-none"
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder={currentProduct?.description}
+            ></textarea>
           </div>
 
           {/* Image Uploader */}
