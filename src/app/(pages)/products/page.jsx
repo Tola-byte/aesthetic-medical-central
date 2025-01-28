@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-
+import { useRouter } from 'next/navigation';
 import Checkboxes from '@/app/components/Checkboxes';
 import Sort from '@/app/components/Sort';
 import Search from '@/app/components/Search';
@@ -15,6 +15,8 @@ const page = () => {
   const [isProductsReady, setIsProductsReady] = useState(false);
   const [fetchedProducts, setFetchedProducts] = useState(null);
   const dispatch = useDispatch();
+
+  const router = useRouter();
 
   useEffect(() => {
     fetch('https://amc-server.vercel.app/products', {
@@ -33,12 +35,19 @@ const page = () => {
 
   const addedProducts = useSelector((store) => store.productSlice.products);
 
-  const addToCart = (product) => {
+  const addToCart = (e, product) => {
+    e.stopPropagation();
     dispatch(addProduct(product));
   };
 
-  const removeFromCart = (product) => {
+  const removeFromCart = (e, product) => {
+    e.stopPropagation();
     dispatch(removeProduct(product));
+  };
+
+  const goToProductsDetails = (id) => {
+    console.log(id);
+    router.push(`/products/${id}`);
   };
 
   return (
@@ -89,8 +98,9 @@ const page = () => {
             <div className="flex-1 py-6 md:pb-12 grid md:grid-cols-4 gap-8">
               {fetchedProducts?.map((product) => (
                 <div
-                  className="p-2 px-6 bg-gray-100 rounded-lg hover:shadow-md hover:z-20 hover:scale-105 transition-all relative"
+                  className="block p-2 px-6 bg-gray-100 rounded-lg hover:shadow-md hover:z-20 hover:scale-105 transition-all relative"
                   key={product.name}
+                  onClick={() => goToProductsDetails(product.id)}
                 >
                   <div className="flex justify-between pt-2 pb-1">
                     <p className="text-gray-400 text-xs">AMC</p>
@@ -196,11 +206,14 @@ const page = () => {
                       &#8358;{' '}
                       {new Intl.NumberFormat('en-US').format(product.price)}
                     </p>
-                    <button className="block w-fit px-2 py-1 text-sm bg-[#D4AF37] text-white rounded-md">
+                    {/* <button className="block w-fit px-2 py-1 text-sm bg-[#D4AF37] text-white rounded-md relative z-50"> */}
+                    <button className="block w-fit px-2 py-1 text-sm bg-[#D4AF37] text-white rounded-md absolute bottom-1 right-4 z-50">
                       {addedProducts.some((p) => p.name === product.name) ? (
-                        <p onClick={() => removeFromCart(product)}>Remove</p>
+                        <p onClick={(e) => removeFromCart(e, product)}>
+                          Remove
+                        </p>
                       ) : (
-                        <p onClick={() => addToCart(product)}>Cart</p>
+                        <p onClick={(e) => addToCart(e, product)}>Cart</p>
                       )}
                     </button>
                   </div>
