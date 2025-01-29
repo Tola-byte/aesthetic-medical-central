@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { PaystackButton } from 'react-paystack';
 import EmptyCart from '@/app/components/EmptyCart';
@@ -88,7 +89,12 @@ const page = () => {
               <div className="flex-1 px-4 md:px-0 py-4 flex flex-col justify-between">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h2 className="font-semibold">{product.name}</h2>
+                    <Link
+                      href={`/products/${product.id}`}
+                      className="font-semibold"
+                    >
+                      {product.name}
+                    </Link>
                     <p className="text-white bg-[#D4AF37] text-[10px] w-fit px-2 py-1 rounded-md mt-1 mb-8">
                       &#8358;{' '}
                       {new Intl.NumberFormat('en-US').format(product.price)}
@@ -100,10 +106,10 @@ const page = () => {
                     </p>
                   </button>
                 </div>
-                <div className="w-full flex justify-between">
+                <div className="w-full flex justify-between mt-12">
                   <div className="flex items-center gap-2">
                     <p
-                      className="bg-[#D4AF37] w-6 h-6 flex items-center justify-center rounded-full"
+                      className="bg-[#D4AF37]  w-6 h-6 flex items-center justify-center rounded-full cursor-pointer"
                       onClick={() => increaseProductCount(product)}
                     >
                       <svg
@@ -123,7 +129,7 @@ const page = () => {
                     </p>
                     <p className="px-4 font-semibold">{product.count}</p>
                     <p
-                      className="bg-red-500 text-white w-6 h-6 flex items-center justify-center rounded-full"
+                      className="bg-red-500 text-white w-6 h-6 flex items-center justify-center rounded-full cursor-pointer"
                       onClick={() => decreaseProductCount(product)}
                     >
                       <svg
