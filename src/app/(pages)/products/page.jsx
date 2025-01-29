@@ -24,7 +24,7 @@ const page = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log('data returned: ', data);
+        // console.log('data returned: ', data);
         setIsProductsReady(true);
         setFetchedProducts(data.products);
       })
@@ -46,7 +46,7 @@ const page = () => {
   };
 
   const goToProductsDetails = (id) => {
-    console.log(id);
+    // console.log(id);
     router.push(`/products/${id}`);
   };
 
@@ -98,7 +98,7 @@ const page = () => {
             <div className="flex-1 py-6 md:pb-12 grid md:grid-cols-4 gap-8">
               {fetchedProducts?.map((product) => (
                 <div
-                  className="block p-2 px-6 bg-gray-100 rounded-lg hover:shadow-md hover:z-20 hover:scale-105 transition-all relative"
+                  className="cursor-pointer block p-2 px-6 bg-gray-100 rounded-lg hover:shadow-md hover:z-20 hover:scale-105 transition-all relative"
                   key={product.name}
                   onClick={() => goToProductsDetails(product.id)}
                 >
@@ -111,7 +111,7 @@ const page = () => {
                       strokeWidth={1.5}
                       stroke="currentColor"
                       className="size-4"
-                      onClick={() => toggleLike(product)}
+                      // onClick={() => toggleLike(product)}
                     >
                       <path
                         strokeLinecap="round"
