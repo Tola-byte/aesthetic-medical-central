@@ -63,7 +63,7 @@ const page = () => {
       )
       .join('%0A');
     const message = `I want to make payment for the following goods:%0A%0A${orderDetails}%0A%0ATotal: ₦${totalPrice}`;
-    const phoneNumber = '2348143211592'; // Replace with admin's WhatsApp number
+    const phoneNumber = '2349015151533'; // Replace with admin's WhatsApp number
     //https://wa.me/2349015151533 // this is the admin number wajud
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
