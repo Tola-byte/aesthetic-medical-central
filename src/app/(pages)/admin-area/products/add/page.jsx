@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import SignOut from '@/app/components/SignOut';
+import ProductCategory from '@/app/components/ProductCategories';
 
 const page = () => {
   const router = useRouter();
@@ -13,6 +14,7 @@ const page = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState(null);
   // const [uploading, setUploading] = useState(false);
+
 
   const handleImageUpload = async () => {
     if (!image) {
@@ -78,6 +80,10 @@ const page = () => {
         console.log('Something went wrong: ', err);
       });
   };
+  
+  
+  
+  
   return (
     <div className="pt-24 px-12 bg-gray-300 pb-12">
       <div className="flex justify-between items-center">
@@ -101,11 +107,11 @@ const page = () => {
         <SignOut />
       </div>
 
-      <div className="bg-white w-[70%] mx-auto py-12 px-12">
+      <div className="bg-white w-[95%] md:w-[70%] mx-auto py-12 px-12">
         <h1 className="text-xl text-center font-semibold mb-6">
           Add New Product
         </h1>
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
           <label htmlFor="name" className="w-[12rem]">
             Product Name
           </label>
@@ -116,7 +122,7 @@ const page = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
           <label htmlFor="price" className="w-[12rem]">
             Price
           </label>
@@ -127,19 +133,19 @@ const page = () => {
             onChange={(e) => setPrice(e.target.value)}
           />
         </div>
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col md:flex-row md:justify-stretch items-center gap-4 mb-4">
           <label htmlFor="category" className="w-[12rem]">
             Product Category
           </label>
-          <input
-            type="text"
-            placeholder="category"
-            className="focus:outline-none px-2 py-2 rounded-md flex-1 bg-gray-300"
-            onChange={(e) => setCategory(e.target.value)}
-          />
+          
+          <div className='flex-1 w-full flex justify-stretch'>
+
+          <ProductCategory setCategory={setCategory} category={category} />
+          </div>
+      
         </div>
 
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
           <label htmlFor="category" className="w-[12rem]">
             Product Description
           </label>
@@ -152,11 +158,11 @@ const page = () => {
           ></textarea>
         </div>
 
-        <div className="flex gap-4 items-center mb-6 relative left-1">
+        <div className="flex flex-col md:flex-row gap-4 items-center mb-6 relative left-1">
           <label htmlFor="file-upload" className="w-[16rem]">
             Product Image
           </label>
-          <div className="flex w-full gap-4 items-center">
+          <div className="flex flex-col md:flex-row w-full gap-4 items-center">
             <input
               type="file"
               id="file-upload"
@@ -166,7 +172,7 @@ const page = () => {
             />
             <label
               htmlFor="file-upload"
-              className="flex-1 px-2 py-2 bg-gray-300 text-gray-400 rounded-lg cursor-pointer hover:bg-gray-400 transition duration-200"
+              className="md:flex-1 px-2 py-2 bg-gray-300 text-gray-400 rounded-lg cursor-pointer hover:bg-gray-400 transition duration-200"
             >
               {image ? image.name : 'Choose Image'}
             </label>
