@@ -29,7 +29,7 @@ const HomeComponent = () => {
           </p>
           <Link
             href={
-              'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
+              'https://www.fresha.com/book-now/aesthetic-medicine-central-r6t3l1d4/all-offer?share&pId=615796'
             }
           >
             <button className="block ml-2 w-fit px-4 py-1 mb-6 md:mb-0 rounded-md border border-black bg-[#D4AF37] transition-all duration-500 hover:bg-black hover:text-[#D4AF37]">
