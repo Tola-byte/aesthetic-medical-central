@@ -85,7 +85,7 @@ const page = () => {
             <div className="p-4 mt-4">
               <Link
                 href={
-                  'https://partner.pabau.com/online-bookings/Aesthetic-Medicine-Central'
+                  'https://www.fresha.com/a/aesthetic-medicine-central-lagos-chronicare-143-gbagada-oworonshoki-expressway-q860ch6w/all-offer?menu=true&pId=615796'
                 }
               >
                 <button className="bg-[#d4af37] flex justify-center m-auto text-white rounded-lg w-3/4 p-2 hover:bg-white border-2 border-[#d4af37] hover:text-[#d4af37]">
